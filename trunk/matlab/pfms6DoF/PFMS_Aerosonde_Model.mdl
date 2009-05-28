@@ -1,0 +1,6449 @@
+Model {
+  Name			  "PFMS_Aerosonde_Model"
+  Version		  7.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.198"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  CloseFcn		  "rtwprivate ssgencode ModelCloseRequest PFMS"
+  Created		  "Mon Jul 01 17:09:14 2002"
+  Creator		  "Nicholas"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Nicholas"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri May 29 02:47:45 2009"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:198>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.6.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.6.0"
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  FixedStep		  "0.008"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "ode4"
+	  SolverName		  "ode4"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SignalSizeVariationType "Allow only fixed size"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.6.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.6.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "none"
+	  UnconnectedOutputMsg	  "none"
+	  UnconnectedLineMsg	  "none"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "None"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.6.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "LittleEndian"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "MATLAB Host"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.6.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.6.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.6.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.6.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 520, 285, 1400, 915 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Derivative
+      LinearizePole	      "inf"
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+      DimensionsMode	      "auto"
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
+    }
+    Block {
+      BlockType		      MATLABFcn
+      MATLABFcn		      "sin"
+      OutputDimensions	      "-1"
+      OutputSignalType	      "auto"
+      Output1D		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+      DimensionsMode	      "auto"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+    }
+    Block {
+      BlockType		      Stop
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+  }
+  System {
+    Name		    "PFMS_Aerosonde_Model"
+    Location		    [2, 72, 1901, 1132]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Display
+      Name		      "AC East"
+      Ports		      [1]
+      Position		      [1100, 211, 1185, 239]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "AC North"
+      Ports		      [1]
+      Position		      [1100, 256, 1185, 284]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "AOA"
+      Ports		      [1]
+      Position		      [1100, 796, 1185, 824]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Aileron \nDeflection \nLimits"
+      Position		      [2195, 720, 2225, 750]
+      BlockMirror	      on
+      UpperLimit	      "+20"
+      LowerLimit	      "-20"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Aircraft states"
+      Ports		      [1]
+      Position		      [1215, 415, 1300, 705]
+      BackgroundColor	      "cyan"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Airspeed"
+      Ports		      [1]
+      Position		      [1100, 696, 1185, 724]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Airspeed\nCmd"
+      Position		      [2300, 991, 2340, 1009]
+      BlockMirror	      on
+      Value		      "23"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Airspeed\nCommand"
+      Position		      [475, 631, 515, 649]
+      BlockMirror	      on
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+      Value		      "25"
+    }
+    Block {
+      BlockType		      Derivative
+      Name		      "Airspeed Error\nDerivative"
+      Position		      [2225, 1070, 2255, 1100]
+      BlockMirror	      on
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Airspeed Error\nIntegrator"
+      Ports		      [1, 1]
+      Position		      [2225, 1000, 2255, 1030]
+      BlockMirror	      on
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Airspeed-to-Elevator\nDerivative2"
+      Position		      [2140, 1070, 2170, 1100]
+      BlockMirror	      on
+      Gain		      "-0.5"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Airspeed-to-Elevator\nIntegral2"
+      Position		      [2140, 1000, 2170, 1030]
+      BlockMirror	      on
+      Gain		      "-0.005"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Airspeed-to-Elevator\nProportional2"
+      Position		      [2140, 935, 2170, 965]
+      BlockMirror	      on
+      Gain		      "-0.03"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Altitude"
+      Ports		      [1]
+      Position		      [1100, 306, 1185, 334]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Bank Angle\nIntegrator"
+      Ports		      [1, 1]
+      Position		      [2100, 690, 2130, 720]
+      BlockMirror	      on
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Bank Angle\nIntegrator1"
+      Ports		      [1, 1]
+      Position		      [2100, 845, 2130, 875]
+      BlockMirror	      on
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Bank angle"
+      Ports		      [1]
+      Position		      [1100, 596, 1185, 624]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Aileron\nIntegral"
+      Position		      [2015, 690, 2045, 720]
+      BlockMirror	      on
+      Gain		      "0.05*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Aileron\nProportional"
+      Position		      [2015, 625, 2045, 655]
+      BlockMirror	      on
+      Gain		      "0.5*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Rudder\nIntegral"
+      Position		      [2015, 845, 2045, 875]
+      BlockMirror	      on
+      Gain		      "0.03*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Rudder\nProportional"
+      Position		      [2015, 780, 2045, 810]
+      BlockMirror	      on
+      Gain		      "0.3*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Command Aileron"
+      Ports		      [1]
+      Position		      [1100, 846, 1185, 874]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Command Elevator"
+      Ports		      [1]
+      Position		      [1100, 896, 1185, 924]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Command Throttle"
+      Ports		      [1]
+      Position		      [1100, 946, 1185, 974]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Control Block"
+      Ports		      [7, 3]
+      Position		      [225, 549, 360, 691]
+      BlockMirror	      on
+      BackgroundColor	      "cyan"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Control Block"
+	Location		[0, 80, 1900, 1171]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Heading"
+	  Position		  [240, 38, 270, 52]
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Bank Angle"
+	  Position		  [240, 78, 270, 92]
+	  BlockMirror		  on
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired Heading"
+	  Position		  [240, 118, 270, 132]
+	  BlockMirror		  on
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Airspeed"
+	  Position		  [240, 213, 270, 227]
+	  BlockMirror		  on
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired Airspeed"
+	  Position		  [240, 268, 270, 282]
+	  BlockMirror		  on
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired Altitude"
+	  Position		  [240, 373, 270, 387]
+	  BlockMirror		  on
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Altitude"
+	  Position		  [240, 428, 270, 442]
+	  BlockMirror		  on
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Airspeed-to-Elevator \nController"
+	  Ports			  [2, 1]
+	  Position		  [80, 192, 205, 303]
+	  BlockMirror		  on
+	  BackgroundColor	  "[0.752941, 0.752941, 0.752941]"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Airspeed-to-Elevator \nController"
+	    Location		    [-87, 367, 1813, 755]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Airspeed"
+	      Position		      [380, 48, 410, 62]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired Airspeed"
+	      Position		      [380, 103, 410, 117]
+	      BlockMirror	      on
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Derivative
+	      Name		      "Airspeed error\nDerivative"
+	      Position		      [255, 180, 285, 210]
+	      BlockMirror	      on
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Airspeed error\nIntegrator"
+	      Ports		      [1, 1]
+	      Position		      [255, 105, 285, 135]
+	      BlockMirror	      on
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Airspeed-to-Elevator\nDerivative"
+	      Position		      [170, 180, 200, 210]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "-0.5"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Airspeed-to-Elevator\nIntegral"
+	      Position		      [170, 105, 200, 135]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "-0.005"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Airspeed-to-Elevator\nProportional"
+	      Position		      [170, 40, 200, 70]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "-0.03"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [3, 1]
+	      Position		      [80, 45, 105, 95]
+	      BlockMirror	      on
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      Inputs		      "+++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [2, 1]
+	      Position		      [325, 45, 345, 65]
+	      BlockMirror	      on
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Elevator"
+	      Position		      [25, 63, 55, 77]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed error\nDerivative"
+	      SrcPort		      1
+	      DstBlock		      "Airspeed-to-Elevator\nDerivative"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed error\nIntegrator"
+	      SrcPort		      1
+	      DstBlock		      "Airspeed-to-Elevator\nIntegral"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed-to-Elevator\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed-to-Elevator\nIntegral"
+	      SrcPort		      1
+	      Points		      [-30, 0; 0, -50]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed-to-Elevator\nDerivative"
+	      SrcPort		      1
+	      Points		      [-35, 0; 0, -110]
+	      DstBlock		      "Sum1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      Points		      [-10, 0]
+	      Branch {
+		DstBlock		"Airspeed-to-Elevator\nProportional"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 65]
+		Branch {
+		  DstBlock		  "Airspeed error\nIntegrator"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 75]
+		  DstBlock		  "Airspeed error\nDerivative"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Elevator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Desired Airspeed"
+	      SrcPort		      1
+	      Points		      [-40, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "Airspeed-To-Elevator PID control"
+	      Position		      [204, 25]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Altitude-to-Throttle \nController"
+	  Ports			  [2, 1]
+	  Position		  [80, 351, 205, 464]
+	  BlockMirror		  on
+	  BackgroundColor	  "[0.752941, 0.752941, 0.752941]"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Altitude-to-Throttle \nController"
+	    Location		    [2, 80, 1902, 1157]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired Altitude"
+	      Position		      [575, 130, 605, 145]
+	      BlockRotation	      270
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Altitude"
+	      Position		      [640, 78, 670, 92]
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Altitude-to-Throttle\nIntegral"
+	      Position		      [380, 175, 410, 205]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "-0.00080"
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Altitude-to-Throttle\nIntegrator"
+	      Ports		      [1, 1]
+	      Position		      [490, 175, 520, 205]
+	      BlockMirror	      on
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Altitude-to-Throttle\nProportional"
+	      Position		      [380, 70, 410, 100]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "-0.045"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Integral Saturation"
+	      Position		      [285, 175, 315, 205]
+	      BlockMirror	      on
+	      BackgroundColor	      "red"
+	      UpperLimit	      ".8"
+	      LowerLimit	      "0"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation Throttle"
+	      Position		      [125, 80, 155, 110]
+	      BlockMirror	      on
+	      BackgroundColor	      "red"
+	      UpperLimit	      "1.5"
+	      LowerLimit	      "0"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum5"
+	      Ports		      [2, 1]
+	      Position		      [210, 72, 235, 123]
+	      BlockMirror	      on
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum6"
+	      Ports		      [2, 1]
+	      Position		      [580, 75, 600, 95]
+	      BlockMirror	      on
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Throttle"
+	      Position		      [55, 88, 85, 102]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Sum6"
+	      SrcPort		      1
+	      Points		      [-30, 0]
+	      Branch {
+		DstBlock		"Altitude-to-Throttle\nProportional"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 105]
+		DstBlock		"Altitude-to-Throttle\nIntegrator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Integral Saturation"
+	      SrcPort		      1
+	      Points		      [-15, 0; 0, -80]
+	      DstBlock		      "Sum5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Altitude-to-Throttle\nIntegral"
+	      SrcPort		      1
+	      DstBlock		      "Integral Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum5"
+	      SrcPort		      1
+	      Points		      [0, -5]
+	      DstBlock		      "Saturation Throttle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Altitude-to-Throttle\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Sum5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Altitude-to-Throttle\nIntegrator"
+	      SrcPort		      1
+	      DstBlock		      "Altitude-to-Throttle\nIntegral"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Altitude"
+	      SrcPort		      1
+	      DstBlock		      "Sum6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Desired Altitude"
+	      SrcPort		      1
+	      DstBlock		      "Sum6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Saturation Throttle"
+	      SrcPort		      1
+	      DstBlock		      "Throttle"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Bank-angle-to-Aileron\nController"
+	  Ports			  [3, 1]
+	  Position		  [80, 28, 205, 142]
+	  BlockMirror		  on
+	  BackgroundColor	  "[0.752941, 0.752941, 0.752941]"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Bank-angle-to-Aileron\nController"
+	    Location		    [474, 628, 1589, 1216]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Heading"
+	      Position		      [675, 123, 705, 137]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Bank Angle"
+	      Position		      [345, 30, 375, 45]
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired Heading"
+	      Position		      [620, 175, 650, 190]
+	      BlockRotation	      270
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Bank angle\nIntegrator"
+	      Ports		      [1, 1]
+	      Position		      [230, 115, 260, 145]
+	      BlockMirror	      on
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Bank-angle-to-Aileron\nIntegral"
+	      Position		      [145, 115, 175, 145]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "0.05*pi/180"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Bank-angle-to-Aileron\nProportional"
+	      Position		      [145, 50, 175, 80]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "0.5*pi/180"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Heading-to-Bank Angle\nProportional"
+	      Position		      [505, 115, 535, 145]
+	      BlockMirror	      on
+	      BackgroundColor	      "lightBlue"
+	      DropShadow	      on
+	      Gain		      "-0.8"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation Bank Angle"
+	      Position		      [380, 115, 410, 145]
+	      BlockMirror	      on
+	      BackgroundColor	      "red"
+	      UpperLimit	      "20"
+	      LowerLimit	      "-20"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [80, 55, 100, 75]
+	      BlockMirror	      on
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [295, 55, 315, 75]
+	      BlockMirror	      on
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum4"
+	      Ports		      [2, 1]
+	      Position		      [625, 120, 645, 140]
+	      BlockMirror	      on
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Aileron"
+	      Position		      [15, 58, 45, 72]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      Points		      [-10, 0]
+	      Branch {
+		DstBlock		"Bank-angle-to-Aileron\nProportional"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"Bank angle\nIntegrator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Bank-angle-to-Aileron\nIntegral"
+	      SrcPort		      1
+	      Points		      [-50, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Bank angle\nIntegrator"
+	      SrcPort		      1
+	      DstBlock		      "Bank-angle-to-Aileron\nIntegral"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bank-angle-to-Aileron\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum4"
+	      SrcPort		      1
+	      DstBlock		      "Heading-to-Bank Angle\nProportional"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Heading-to-Bank Angle\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Saturation Bank Angle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Heading"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bank Angle"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Desired Heading"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Aileron"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation Bank Angle"
+	      SrcPort		      1
+	      Points		      [-70, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "Bank-angle to ailerons PI control"
+	      Position		      [184, 25]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Aileron"
+	  Position		  [25, 78, 55, 92]
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Elevator"
+	  Position		  [25, 238, 55, 252]
+	  BlockMirror		  on
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Throttle"
+	  Position		  [25, 403, 55, 417]
+	  BlockMirror		  on
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Heading"
+	  SrcPort		  1
+	  DstBlock		  "Bank-angle-to-Aileron\nController"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bank Angle"
+	  SrcPort		  1
+	  DstBlock		  "Bank-angle-to-Aileron\nController"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bank-angle-to-Aileron\nController"
+	  SrcPort		  1
+	  DstBlock		  "Aileron"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Desired Heading"
+	  SrcPort		  1
+	  DstBlock		  "Bank-angle-to-Aileron\nController"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Airspeed"
+	  SrcPort		  1
+	  DstBlock		  "Airspeed-to-Elevator \nController"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Airspeed-to-Elevator \nController"
+	  SrcPort		  1
+	  DstBlock		  "Elevator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Desired Airspeed"
+	  SrcPort		  1
+	  DstBlock		  "Airspeed-to-Elevator \nController"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Desired Altitude"
+	  SrcPort		  1
+	  DstBlock		  "Altitude-to-Throttle \nController"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Altitude-to-Throttle \nController"
+	  SrcPort		  1
+	  DstBlock		  "Throttle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Altitude"
+	  SrcPort		  1
+	  DstBlock		  "Altitude-to-Throttle \nController"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      Ports		      [1, 3]
+      Position		      [380, 152, 385, 238]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "3"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux1"
+      Ports		      [1, 3]
+      Position		      [440, 346, 445, 434]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "3"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux2"
+      Ports		      [1, 16]
+      Position		      [751, 170, 1089, 175]
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "black"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Outputs		      "16"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Desired Altitude"
+      Ports		      [1]
+      Position		      [1100, 446, 1185, 474]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Flamingo UAV"
+      Ports		      [3, 15]
+      Position		      [235, 137, 350, 433]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "6-DOF Aircraft Model"
+      MaskDescription	      "Nonlinear 6-DOF aircraft model with equations of motion in body frame."
+      MaskHelp		      "The block implements the 6-DOF nonlinear aircraft model using AeroSim blocks. Velocities are co"
+      "mputed in body frame.\n<P><B>Inputs:</B>\n<LI>Controls = the 7x1 vector of aircraft controls [flap elevator aile"
+      "ron rudder throttle mixture ignition]. Aerodynamic controls are in radians, throttle is from 0 to 1, mixture is "
+      "fraction air/fuel flow, ignition is 0 (engine off) or 1 (engine on).</LI>\n<LI>Winds = the 3x1 vector of backgro"
+      "und wind speed components in navigation frame [North East Down]</LI>\n<LI>RST = the integrator reset flag (0 or "
+      "1, all integrators on rising edge)\n</P>\n<P><B>Outputs:</B> \n<LI>States = the 15x1 aircraft state vector [Velo"
+      "cities, Angular rates, Quaternions, Position, Fuel mass, Engine speed].</LI>\n<LI>Sensors = the 18x1 vector of s"
+      "ensor outputs [GPS Position, GPS Groundspeed, Accelerometers, Gyros, Air data, Magnetometer].</LI>\n<LI>VelW = t"
+      "he 3x1 vector of aircraft velocity in wind axes [Airspeed, sideslip, angle of attack]</LI>\n<LI>Mach = the Mach "
+      "number</LI>\n<LI>Ang Acc = the 3x1 vector of angular accelerations\n<LI>Euler = the 3x1 vector of Euler angles ("
+      "roll, pitch, yaw)</LI>\n<LI>AeroCoeff = the 6x1 vector of aerodynamic coefficients [CD CY CL Cl Cm Cn]</LI>\n<LI"
+      ">PropCoeff = the 3x1 vector of propeller coefficients [J CT CP]</LI>\n<LI>EngCoeff = the 5x1 vector of engine co"
+      "efficients [MAP Airflow Fuelflow BSFC Power]</LI>\n<LI>Mass = the current aircraft mass</LI>\n<LI>ECEF = 3x1 vec"
+      "tor of position of the aircraft in the Earth-centered, Earth-fixed frame</LI>\n<LI>MSL = the aircraft altitude a"
+      "bove mean-sea-level</LI>\n<LI>AGL = the aircraft altitude above terrain</LI>\n<LI>REarth = the Earth equivalent "
+      "radius at current location\n<LI>AConGnd = the aircraft-on-ground flag (0 if aircraft above ground, 1 if aircraft"
+      " on the ground)</LI>\n</P>\n<P><B>Parameters:</B>\n<LI>Aircraft configuration file = the MAT-file with aircraft "
+      "data</LI>\n<LI>Initial velocities = the 3x1 vector of initial aircraft velocities in body axes [u v w]</LI>\n<LI"
+      ">Initial angular rates = the 3x1 vector of initial angular rates [p q r]</LI>\n<LI>Initial attitude = the 4x1 ve"
+      "ctor of initial quaternions [e0 ex ey ez]</LI>\n<LI>Initial position = the 3x1 vector of initial aircraft locati"
+      "on [Lat Lon Alt]</LI>\n<LI>Initial fuel mass = the initial quantity of fuel on-board the aircraft</LI>\n<LI>Init"
+      "ial engine speed = the initial engine rotation speed</LI>\n<LI>Ground altitude = the ground altitude at aircraft"
+      " location</LI>\n<LI>WMM coefficient file = the path to the magnetic model coefficient file</LI>\n<LI>Simulation "
+      "date = the date to be used for the magnetic model [day month year]</LI>\n<LI>Sample time = the aircraft model sa"
+      "mple time.</LI>\n</P>"
+      MaskPromptString	      "Aircraft configuration file:|Initial velocities:|Initial angular rates:|Initial attitude"
+      ":|Initial position:|Initial fuel mass:|Initial engine speed:|Ground altitude:|WMM coefficient file:|Simulation d"
+      "ate:|Sample time:"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on"
+      MaskCallbackString      "||||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on"
+      MaskVarAliasString      ",,,,,,,,,,"
+      MaskVariables	      "aircraftcfg=@1;VelocitiesIni=@2;RatesIni=@3;QuaternionsIni=@4;PositionIni=@5;FuelIni=@6;Ome"
+      "gaIni=@7;GndAlt=@8;wmmfile=@9;dmy=@10;tsamp=@11;"
+      MaskInitialization      "load(aircraftcfg);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'aerosondecfg.mat'|[23 0 0]'|[0 0 0]'|[1 0 0 0]'|[-0.4877  2.6728 1000]'|2|5000*pi/30|20|"
+      "'C:\\Program Files\\MATLAB\\AeroSim\\wmm.cof'|[26 05 2009]|0.8"
+      MaskTabNameString	      ",,,,,,,,,,"
+      System {
+	Name			"Flamingo UAV"
+	Location		[28, 126, 1140, 920]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Controls"
+	  Position		  [15, 153, 45, 167]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Winds"
+	  Position		  [365, 508, 395, 522]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "RST"
+	  Position		  [70, 418, 100, 432]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Aerodynamics"
+	  Ports			  [7, 6]
+	  Position		  [180, 36, 280, 184]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Aerodynamics"
+	    Location		    [312, 142, 1054, 942]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VelB"
+	      Position		      [20, 58, 50, 72]
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "WindB"
+	      Position		      [20, 88, 50, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Rates"
+	      Position		      [20, 258, 50, 272]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "WindRates"
+	      Position		      [20, 288, 50, 302]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "AeroCon"
+	      Position		      [20, 168, 50, 182]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[4 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "rho"
+	      Position		      [20, 198, 50, 212]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "1"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "a"
+	      Position		      [20, 228, 50, 242]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "1"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Aerodynamic\nForce"
+	      Ports		      [5, 1]
+	      Position		      [515, 53, 615, 157]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Aerodynamic\nForce"
+	      SourceType	      "Aerodynamic force"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      S			      "S"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Aerodynamic\nMoment"
+	      Ports		      [4, 1]
+	      Position		      [515, 199, 615, 281]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Aerodynamic\nMoment"
+	      SourceType	      "Aerodynamic moment"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      c			      "MAC"
+	      b			      "b"
+	      S			      "S"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Drag Coefficient"
+	      Ports		      [4, 1]
+	      Position		      [300, 211, 400, 289]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Drag Coefficient"
+	      SourceType	      "Drag coefficient"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      CL0		      "CLmind"
+	      CD0		      "CDmin"
+	      CDdf		      "CDdf"
+	      CDde		      "CDde"
+	      CDda		      "CDda"
+	      CDdr		      "CDdr"
+	      CDM		      "CDM"
+	      e			      "osw"
+	      b			      "b"
+	      S			      "S"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Dynamic Pressure"
+	      Ports		      [2, 1]
+	      Position		      [115, 187, 200, 238]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Dynamic Pressure"
+	      SourceType	      "Dynamic pressure"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Lift Coefficient"
+	      Ports		      [5, 1]
+	      Position		      [300, 52, 400, 158]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Lift Coefficient"
+	      SourceType	      "Lift coefficient"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      CL0		      "CL0"
+	      CLalpha		      "CLa"
+	      CLdf		      "CLdf"
+	      CLde		      "CLde"
+	      CLalphadot	      "CLalphadot"
+	      CLq		      "CLq"
+	      CLM		      "CLM"
+	      c			      "MAC"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [6, 1]
+	      Position		      [515, 322, 520, 438]
+	      ShowName		      off
+	      Inputs		      "6"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pitch Moment\nCoefficient"
+	      Ports		      [5, 1]
+	      Position		      [300, 423, 400, 527]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Pitch Moment\nCoefficient"
+	      SourceType	      "Pitch moment coefficient"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      Cm0		      "Cm0"
+	      Cma		      "Cma"
+	      Cmdf		      "Cmdf"
+	      Cmde		      "Cmde"
+	      Cmalphadot	      "Cmalphadot"
+	      Cmq		      "Cmq"
+	      CmM		      "CmM"
+	      c			      "MAC"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Roll Moment\nCoefficient"
+	      Ports		      [3, 1]
+	      Position		      [300, 560, 400, 640]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Roll Moment\nCoefficient"
+	      SourceType	      "Roll moment coefficient"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      Clbeta		      "Clbeta"
+	      Clda		      "Clda"
+	      Cldr		      "Cldr"
+	      Clp		      "Clp"
+	      Clr		      "Clr"
+	      b			      "b"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Side Force Coefficient"
+	      Ports		      [3, 1]
+	      Position		      [300, 321, 400, 399]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Side Force Coefficient"
+	      SourceType	      "Side force coefficient"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      CYbeta		      "CYbeta"
+	      CYda		      "CYda"
+	      CYdr		      "CYdr"
+	      CYp		      "CYp"
+	      CYr		      "CYr"
+	      b			      "b"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [75, 255, 95, 275]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Wind-axes Velocities"
+	      Ports		      [3, 3]
+	      Position		      [110, 52, 210, 128]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Wind-axes Velocities"
+	      SourceType	      "Wind-axes velocities"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      Vabnd		      "VaBnd"
+	      betabnd		      "BetaBnd"
+	      alphabnd		      "AlphaBnd"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Yaw Moment\nCoefficient"
+	      Ports		      [3, 1]
+	      Position		      [300, 675, 400, 755]
+	      SourceBlock	      "aerosimlib/Aerodynamics/Yaw Moment\nCoefficient"
+	      SourceType	      "Yaw moment coefficient"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      Cnbeta		      "Cnbeta"
+	      Cnda		      "Cnda"
+	      Cndr		      "Cndr"
+	      Cnp		      "Cnp"
+	      Cnr		      "Cnr"
+	      b			      "b"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Faero"
+	      Position		      [680, 98, 710, 112]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Maero"
+	      Position		      [680, 128, 710, 142]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "AeroCoeff"
+	      Position		      [680, 158, 710, 172]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VelW"
+	      Position		      [680, 188, 710, 202]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Mach"
+	      Position		      [680, 218, 710, 232]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pdyn"
+	      Position		      [680, 248, 710, 262]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [135, 0]
+	      Branch {
+		Points			[0, 120]
+		Branch {
+		  Points		  [0, 110]
+		  Branch {
+		    Points		    [0, 130]
+		    Branch {
+		    DstBlock		    "Roll Moment\nCoefficient"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, 115]
+		    DstBlock		    "Yaw Moment\nCoefficient"
+		    DstPort		    3
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "Pitch Moment\nCoefficient"
+		    DstPort		    4
+		  }
+		}
+		Branch {
+		  DstBlock		  "Side Force Coefficient"
+		  DstPort		  3
+		}
+	      }
+	      Branch {
+		Points			[0, -140]
+		DstBlock		"Lift Coefficient"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "WindRates"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Rates"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      Points		      [120, 0; 0, -215]
+	      DstBlock		      "AeroCoeff"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Aerodynamic\nMoment"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -105]
+	      DstBlock		      "Maero"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Aerodynamic\nForce"
+	      SrcPort		      1
+	      DstBlock		      "Faero"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Yaw Moment\nCoefficient"
+	      SrcPort		      1
+	      Points		      [90, 0; 0, -285]
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			6
+	      }
+	      Branch {
+		Points			[0, -180]
+		DstBlock		"Aerodynamic\nMoment"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Pitch Moment\nCoefficient"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, -65]
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			5
+	      }
+	      Branch {
+		Points			[0, -180]
+		DstBlock		"Aerodynamic\nMoment"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Roll Moment\nCoefficient"
+	      SrcPort		      1
+	      Points		      [70, 0; 0, -210]
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			4
+	      }
+	      Branch {
+		Points			[0, -180]
+		DstBlock		"Aerodynamic\nMoment"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Dynamic Pressure"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 95; 240, 0]
+	      Branch {
+		Points			[200, 0; 0, -55]
+		DstBlock		"pdyn"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -40]
+		Branch {
+		  DstBlock		  "Aerodynamic\nMoment"
+		  DstPort		  4
+		}
+		Branch {
+		  Points		  [0, -145]
+		  DstBlock		  "Aerodynamic\nForce"
+		  DstPort		  4
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Side Force Coefficient"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -10]
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -265]
+		DstBlock		"Aerodynamic\nForce"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Drag Coefficient"
+	      SrcPort		      1
+	      Points		      [0, 0; 30, 0]
+	      Branch {
+		Points			[0, 80]
+		DstBlock		"Mux"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -185]
+		DstBlock		"Aerodynamic\nForce"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Lift Coefficient"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, 95]
+		Branch {
+		  Points		  [0, 170]
+		  DstBlock		  "Mux"
+		  DstPort		  3
+		}
+		Branch {
+		  Points		  [-150, 0; 0, 60]
+		  DstBlock		  "Drag Coefficient"
+		  DstPort		  3
+		}
+	      }
+	      Branch {
+		DstBlock		"Aerodynamic\nForce"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Wind-axes Velocities"
+	      SrcPort		      3
+	      Points		      [30, 0; 0, 30]
+	      Branch {
+		Points			[30, 0]
+		Branch {
+		  Points		  [0, 35; 380, 0; 0, 45]
+		  DstBlock		  "Mach"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Lift Coefficient"
+		  DstPort		  5
+		}
+	      }
+	      Branch {
+		Points			[0, 135]
+		Branch {
+		  Points		  [0, 235]
+		  DstBlock		  "Pitch Moment\nCoefficient"
+		  DstPort		  5
+		}
+		Branch {
+		  DstBlock		  "Drag Coefficient"
+		  DstPort		  4
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Wind-axes Velocities"
+	      SrcPort		      2
+	      Points		      [10, 0; 0, 15]
+	      Branch {
+		Points			[0, 370]
+		DstBlock		"Pitch Moment\nCoefficient"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Lift Coefficient"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "AeroCon"
+	      SrcPort		      1
+	      Points		      [0, 0; 210, 0]
+	      Branch {
+		Points			[0, 65]
+		Branch {
+		  Points		  [0, 120]
+		  Branch {
+		    Points		    [0, 95]
+		    Branch {
+		    Points		    [0, 145]
+		    Branch {
+		    Points		    [0, 115]
+		    DstBlock		    "Yaw Moment\nCoefficient"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Roll Moment\nCoefficient"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Pitch Moment\nCoefficient"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "Side Force Coefficient"
+		    DstPort		    2
+		  }
+		}
+		Branch {
+		  DstBlock		  "Drag Coefficient"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		Points			[0, -90]
+		DstBlock		"Lift Coefficient"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "rho"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 20]
+	      DstBlock		      "Dynamic Pressure"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Wind-axes Velocities"
+	      SrcPort		      1
+	      Points		      [0, 0; 40, 0]
+	      Branch {
+		Points			[0, 95]
+		Branch {
+		  Points		  [0, 30]
+		  Branch {
+		    Points		    [210, 0]
+		    Branch {
+		    Points		    [200, 0]
+		    DstBlock		    "VelW"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -45]
+		    DstBlock		    "Aerodynamic\nForce"
+		    DstPort		    5
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 30]
+		    Branch {
+		    Points		    [0, 115]
+		    Branch {
+		    Points		    [0, 100]
+		    Branch {
+		    Points		    [0, 140]
+		    Branch {
+		    Points		    [0, 115]
+		    DstBlock		    "Yaw Moment\nCoefficient"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Roll Moment\nCoefficient"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Pitch Moment\nCoefficient"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Side Force Coefficient"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Drag Coefficient"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Branch {
+		  Points		  [-160, 0; 0, 40]
+		  DstBlock		  "Dynamic Pressure"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Lift Coefficient"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "a"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -120]
+	      DstBlock		      "Wind-axes Velocities"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "WindB"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -5]
+	      DstBlock		      "Wind-axes Velocities"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "VelB"
+	      SrcPort		      1
+	      DstBlock		      "Wind-axes Velocities"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Inputs"
+	      Position		      [37, 26]
+	    }
+	    Annotation {
+	      Name		      "Outputs"
+	      Position		      [695, 82]
+	    }
+	    Annotation {
+	      Name		      "Aerodynamic Parameters"
+	      Position		      [156, 28]
+	    }
+	    Annotation {
+	      Name		      "Aerodynamic Coefficients"
+	      Position		      [340, 29]
+	    }
+	    Annotation {
+	      Name		      "Aerodynamic Loads"
+	      Position		      [564, 32]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Aircraft Inertia"
+	  Ports			  [2, 5]
+	  Position		  [455, 108, 555, 262]
+	  SourceBlock		  "aerosimlib/Inertia/Aircraft Inertia"
+	  SourceType		  "Aircraft inertia"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  FuelIni		  "FuelIni"
+	  Mempty		  "mempty"
+	  Mgross		  "mgross"
+	  CGempty		  "CGempty"
+	  CGgross		  "CGgross"
+	  Jempty		  "Jempty"
+	  Jgross		  "Jgross"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Atmosphere"
+	  Ports			  [6, 6]
+	  Position		  [460, 449, 560, 681]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Atmosphere"
+	    Location		    [496, 288, 1178, 741]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "MSL"
+	      Position		      [25, 43, 55, 57]
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "1"
+	      DataType		      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "AGL"
+	      Position		      [25, 78, 55, 92]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "1"
+	      DataType		      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Winds"
+	      Position		      [25, 113, 55, 127]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      DataType		      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VelB"
+	      Position		      [25, 148, 55, 162]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      DataType		      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VelW"
+	      Position		      [25, 183, 55, 197]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "DCM"
+	      Position		      [25, 253, 55, 267]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 3]"
+	      DataType		      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Background Wind"
+	      Ports		      [2, 2]
+	      Position		      [130, 121, 220, 194]
+	      SourceBlock	      "aerosimlib/Atmosphere/Background Wind"
+	      SourceType	      "Background wind"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Standard Atmosphere"
+	      Ports		      [1, 4]
+	      Position		      [120, 12, 220, 88]
+	      SourceBlock	      "aerosimlib/Atmosphere/Standard Atmosphere"
+	      SourceType	      "Standard atmosphere"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [445, 225, 465, 245]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      Position		      [385, 380, 405, 400]
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Turbulence"
+	      Ports		      [3, 2]
+	      Position		      [260, 213, 360, 287]
+	      SourceBlock	      "aerosimlib/Atmosphere/Turbulence"
+	      SourceType	      "Turbulence"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      tsamp		      "tsamp"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Wind Shear"
+	      Ports		      [3, 2]
+	      Position		      [260, 334, 355, 406]
+	      SourceBlock	      "aerosimlib/Atmosphere/Wind Shear"
+	      SourceType	      "Wind shear"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pstatic"
+	      Position		      [625, 38, 655, 52]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "OAT"
+	      Position		      [625, 73, 655, 87]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "rho"
+	      Position		      [625, 108, 655, 122]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "a"
+	      Position		      [625, 143, 655, 157]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "WindVel"
+	      Position		      [625, 178, 655, 192]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "WindRates"
+	      Position		      [625, 213, 655, 227]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Wind Shear"
+	      SrcPort		      2
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [75, 0; 0, -50]
+	      DstBlock		      "WindVel"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Standard Atmosphere"
+	      SrcPort		      4
+	      Points		      [350, 0; 0, 70]
+	      DstBlock		      "a"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Standard Atmosphere"
+	      SrcPort		      3
+	      Points		      [360, 0; 0, 55]
+	      DstBlock		      "rho"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Standard Atmosphere"
+	      SrcPort		      2
+	      Points		      [370, 0; 0, 40]
+	      DstBlock		      "OAT"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Standard Atmosphere"
+	      SrcPort		      1
+	      Points		      [380, 0; 0, 25]
+	      DstBlock		      "pstatic"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Wind Shear"
+	      SrcPort		      1
+	      Points		      [195, 0; 0, -135]
+	      DstBlock		      "WindRates"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VelB"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 240]
+	      DstBlock		      "Wind Shear"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Turbulence"
+	      SrcPort		      2
+	      Points		      [25, 0; 0, 45; -155, 0; 0, 55]
+	      DstBlock		      "Wind Shear"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Turbulence"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Background Wind"
+	      SrcPort		      2
+	      Points		      [20, 0]
+	      DstBlock		      "Wind Shear"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VelW"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 35]
+	      DstBlock		      "Turbulence"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AGL"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 165]
+	      DstBlock		      "Turbulence"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Background Wind"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 50]
+	      Branch {
+		Points			[135, 0; 0, 90; 85, 0]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 85]
+		DstBlock		"Turbulence"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "DCM"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, -85]
+	      DstBlock		      "Background Wind"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Winds"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, 20]
+	      DstBlock		      "Background Wind"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MSL"
+	      SrcPort		      1
+	      DstBlock		      "Standard Atmosphere"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Outputs"
+	      Position		      [640, 20]
+	    }
+	    Annotation {
+	      Name		      "Inputs"
+	      Position		      [43, 26]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 7]
+	  Position		  [65, 89, 70, 231]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "7"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Earth"
+	  Ports			  [2, 8]
+	  Position		  [795, 351, 895, 544]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Earth"
+	    Location		    [9, 80, 454, 536]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Position"
+	      Position		      [20, 43, 50, 57]
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      DataType		      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "DCM"
+	      Position		      [20, 78, 50, 92]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 3]"
+	      DataType		      "double"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ECEF Position"
+	      Ports		      [1, 1]
+	      Position		      [115, 352, 215, 428]
+	      SourceBlock	      "aerosimlib/Transformations/ECEF Position"
+	      SourceType	      "ECEF Position"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "EGM-96"
+	      Ports		      [1, 1]
+	      Position		      [115, 139, 195, 201]
+	      SourceBlock	      "aerosimlib/Earth/EGM-96"
+	      SourceType	      "EGM-96 geoid undulation model"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Ground Alt"
+	      Position		      [20, 112, 50, 128]
+	      Value		      "GndAlt"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Ground Detection"
+	      Ports		      [2, 2]
+	      Position		      [245, 279, 320, 321]
+	      SourceBlock	      "aerosimlib/Earth/Ground Detection"
+	      SourceType	      "Ground detection"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux3"
+	      Ports		      [2, 1]
+	      Position		      [220, 18, 225, 67]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "WGS-84"
+	      Ports		      [1, 4]
+	      Position		      [115, 19, 195, 116]
+	      SourceBlock	      "aerosimlib/Earth/WGS-84"
+	      SourceType	      "WGS-84 Earth model"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "MSL"
+	      Position		      [390, 48, 420, 62]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "AGL"
+	      Position		      [390, 78, 420, 92]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "AConGnd"
+	      Position		      [390, 108, 420, 122]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Rearth"
+	      Position		      [390, 138, 420, 152]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Requiv"
+	      Position		      [390, 168, 420, 182]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Gravity"
+	      Position		      [390, 198, 420, 212]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "MagField"
+	      Position		      [390, 228, 420, 242]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ECEF"
+	      Position		      [390, 258, 420, 272]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "ECEF Position"
+	      SrcPort		      1
+	      Points		      [140, 0; 0, -125]
+	      DstBlock		      "ECEF"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "WGS-84"
+	      SrcPort		      4
+	      Points		      [110, 0; 0, 100]
+	      DstBlock		      "Gravity"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "WGS-84"
+	      SrcPort		      3
+	      Points		      [120, 0; 0, 95]
+	      DstBlock		      "Requiv"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux3"
+	      SrcPort		      1
+	      Points		      [100, 0; 0, 100]
+	      DstBlock		      "Rearth"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Ground Detection"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, -175]
+	      DstBlock		      "AConGnd"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Ground Detection"
+	      SrcPort		      2
+	      Points		      [15, 0; 0, -225]
+	      DstBlock		      "AGL"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "WGS-84"
+	      SrcPort		      2
+	      DstBlock		      "Mux3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "WGS-84"
+	      SrcPort		      1
+	      DstBlock		      "Mux3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "EGM-96"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		Points			[35, 0; 0, -115]
+		DstBlock		"MSL"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 120]
+		DstBlock		"Ground Detection"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Ground Alt"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 190]
+	      DstBlock		      "Ground Detection"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Position"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 20]
+	      Branch {
+		Points			[0, 100]
+		Branch {
+		  DstBlock		  "EGM-96"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 220]
+		  DstBlock		  "ECEF Position"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"WGS-84"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "DCM"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 150]
+	      DstBlock		      "MagField"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Outputs"
+	      Position		      [404, 32]
+	    }
+	    Annotation {
+	      Name		      "Inputs"
+	      Position		      [39, 24]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Equations of Motion"
+	  Ports			  [7, 8]
+	  Position		  [795, 88, 895, 277]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Equations of Motion"
+	    Location		    [189, 270, 697, 808]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Accel"
+	      Position		      [15, 43, 45, 57]
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Moment"
+	      Position		      [15, 73, 45, 87]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[3 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Inertia"
+	      Position		      [15, 103, 45, 117]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[4 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Rearth"
+	      Position		      [15, 143, 45, 157]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "[2 1]"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Gravity"
+	      Position		      [15, 178, 45, 192]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "1"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "AConGnd"
+	      Position		      [15, 213, 45, 227]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "1"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "RST"
+	      Position		      [15, 243, 45, 257]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      PortDimensions	      "1"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Body-Inertial DCM\nFrom Quaternions"
+	      Ports		      [1, 1]
+	      Position		      [300, 305, 395, 365]
+	      SourceBlock	      "aerosimlib/Transformations/Body-Inertial DCM\nFrom Quaternions"
+	      SourceType	      "Body-Inertial DCM"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2]
+	      Position		      [120, 397, 125, 448]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Euler Angles\nFrom Quaternions"
+	      Ports		      [1, 1]
+	      Position		      [300, 220, 395, 280]
+	      SourceBlock	      "aerosimlib/Transformations/Euler Angles\nFrom Quaternions"
+	      SourceType	      "Euler Angles"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Forces"
+	      Ports		      [5, 1]
+	      Position		      [150, 16, 250, 124]
+	      SourceBlock	      "aerosimlib/Equations of Motion/Body-Frame EOM/Forces"
+	      SourceType	      "Force equations"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      VelocitiesIni	      "VelocitiesIni"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Kinematics (Quaternions)"
+	      Ports		      [2, 1]
+	      Position		      [150, 245, 250, 325]
+	      SourceBlock	      "aerosimlib/Equations of Motion/Body-Frame EOM/Kinematics (Quaternions)"
+	      SourceType	      "Kinematic Equations"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      QuaternionsIni	      "QuaternionsIni"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Moments"
+	      Ports		      [3, 2]
+	      Position		      [150, 145, 250, 225]
+	      SourceBlock	      "aerosimlib/Equations of Motion/Body-Frame EOM/Moments"
+	      SourceType	      "Moment equations"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      RatesIni		      "RatesIni"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Navigation"
+	      Ports		      [6, 2]
+	      Position		      [150, 347, 250, 498]
+	      SourceBlock	      "aerosimlib/Equations of Motion/Body-Frame EOM/Navigation"
+	      SourceType	      "Navigation equations"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      PositionIni	      "PositionIni"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VelB"
+	      Position		      [450, 63, 480, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Rates"
+	      Position		      [450, 93, 480, 107]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Quaternions"
+	      Position		      [450, 123, 480, 137]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Position"
+	      Position		      [450, 153, 480, 167]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Groundspeed"
+	      Position		      [450, 183, 480, 197]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DCM"
+	      Position		      [450, 213, 480, 227]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Euler"
+	      Position		      [450, 243, 480, 257]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Ang Acc"
+	      Position		      [450, 273, 480, 287]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Navigation"
+	      SrcPort		      2
+	      Points		      [165, 0; 0, -270]
+	      DstBlock		      "Groundspeed"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Navigation"
+	      SrcPort		      1
+	      Points		      [160, 0; 0, -225]
+	      DstBlock		      "Position"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Moments"
+	      SrcPort		      2
+	      Points		      [155, 0; 0, 75]
+	      DstBlock		      "Ang Acc"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "RST"
+	      SrcPort		      1
+	      Points		      [0, 0; 35, 0]
+	      Branch {
+		Points			[0, 55]
+		Branch {
+		  DstBlock		  "Kinematics (Quaternions)"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 180]
+		  DstBlock		  "Navigation"
+		  DstPort		  6
+		}
+	      }
+	      Branch {
+		Points			[0, -40]
+		Branch {
+		  DstBlock		  "Moments"
+		  DstPort		  3
+		}
+		Branch {
+		  Points		  [0, -100]
+		  DstBlock		  "Forces"
+		  DstPort		  5
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Moments"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		Points			[0, -65]
+		DstBlock		"Rates"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 350; -165, 0; 0, -250]
+		Branch {
+		  DstBlock		  "Kinematics (Quaternions)"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -235]
+		  DstBlock		  "Forces"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Kinematics (Quaternions)"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Body-Inertial DCM\nFrom Quaternions"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -35]
+		Branch {
+		  DstBlock		  "Euler Angles\nFrom Quaternions"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -120]
+		  DstBlock		  "Quaternions"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Forces"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, 450; -175, 0; 0, -160]
+		DstBlock		"Navigation"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"VelB"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "AConGnd"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 240]
+	      DstBlock		      "Navigation"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Gravity"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -115]
+	      DstBlock		      "Forces"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Inertia"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 50]
+	      DstBlock		      "Moments"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Moment"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 105]
+	      DstBlock		      "Moments"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Accel"
+	      SrcPort		      1
+	      DstBlock		      "Forces"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Navigation"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Navigation"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Rearth"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 275]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Body-Inertial DCM\nFrom Quaternions"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[0, 190; -310, 0; 0, -140]
+		Branch {
+		  DstBlock		  "Navigation"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, -295]
+		  DstBlock		  "Forces"
+		  DstPort		  4
+		}
+	      }
+	      Branch {
+		Points			[0, -115]
+		DstBlock		"DCM"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Euler Angles\nFrom Quaternions"
+	      SrcPort		      1
+	      DstBlock		      "Euler"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Inputs"
+	      Position		      [34, 25]
+	    }
+	    Annotation {
+	      Name		      "Outputs"
+	      Position		      [466, 41]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GA Propulsion System"
+	  Ports			  [7, 6]
+	  Position		  [180, 228, 280, 402]
+	  SourceBlock		  "aerosimlib/Propulsion/GA Propulsion System"
+	  SourceType		  "General-aviation propulsion system"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  OmegaIni		  "OmegaIni"
+	  RPM			  "RPM"
+	  MAP			  "MAP"
+	  FuelFlow		  "FuelFlow"
+	  Power			  "Power"
+	  Jeng			  "Jeng"
+	  J			  "J"
+	  CT			  "CT"
+	  CP			  "CP"
+	  Rprop			  "Rprop"
+	  Jprop			  "Jprop"
+	  TSL			  "TSL"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [4, 1]
+	  Position		  [95, 89, 100, 171]
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  Ports			  [3, 1]
+	  Position		  [95, 171, 100, 229]
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  Ports			  [3, 1]
+	  Position		  [645, 451, 650, 499]
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux4"
+	  Ports			  [6, 1]
+	  Position		  [1035, 239, 1040, 386]
+	  ShowName		  off
+	  Inputs		  "6"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux7"
+	  Ports			  [6, 1]
+	  Position		  [1035, 81, 1040, 234]
+	  ShowName		  off
+	  Inputs		  "6"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Total Acceleration"
+	  Ports			  [3, 1]
+	  Position		  [640, 66, 730, 154]
+	  SourceBlock		  "aerosimlib/Equations of Motion/Total Acceleration"
+	  SourceType		  "Total acceleration"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Total Moment"
+	  Ports			  [5, 1]
+	  Position		  [630, 231, 730, 339]
+	  SourceBlock		  "aerosimlib/Equations of Motion/Total Moment"
+	  SourceType		  "Total moment"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  raero			  "rAC"
+	  rprop			  "rHub"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "States"
+	  Position		  [1065, 153, 1095, 167]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Sensors"
+	  Position		  [1065, 308, 1095, 322]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "VelW"
+	  Position		  [1060, 753, 1090, 767]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Mach"
+	  Position		  [300, 143, 330, 157]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ang Acc"
+	  Position		  [915, 263, 945, 277]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Euler"
+	  Position		  [945, 238, 975, 252]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "AeroCoeff"
+	  Position		  [300, 93, 330, 107]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PropCoeff"
+	  Position		  [300, 383, 330, 397]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "EngCoeff"
+	  Position		  [300, 353, 330, 367]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Mass"
+	  Position		  [1060, 693, 1090, 707]
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ECEF"
+	  Position		  [920, 528, 950, 542]
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "MSL"
+	  Position		  [1035, 403, 1065, 417]
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "AGL"
+	  Position		  [1035, 433, 1065, 447]
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "REarth"
+	  Position		  [920, 453, 950, 467]
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "AConGnd"
+	  Position		  [920, 403, 950, 417]
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  7
+	  DstBlock		  "Euler"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  8
+	  DstBlock		  "Ang Acc"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Atmosphere"
+	  SrcPort		  6
+	  Points		  [5, 0; 0, 90; -455, 0; 0, -645]
+	  DstBlock		  "Aerodynamics"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "RST"
+	  SrcPort		  1
+	  Points		  [0, 0; 60, 0]
+	  Branch {
+	    Points		    [240, 0; 0, -30; 35, 0]
+	    Branch {
+	      DstBlock		      "Aircraft Inertia"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [330, 0; 0, -135]
+	      DstBlock		      "Equations of Motion"
+	      DstPort		      7
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "GA Propulsion System"
+	    DstPort		    7
+	  }
+	}
+	Line {
+	  SrcBlock		  "Aircraft Inertia"
+	  SrcPort		  5
+	  Points		  [5, 0; 0, 165; -155, 0; 0, 20; -265, 0; 0, -165]
+	  DstBlock		  "GA Propulsion System"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Atmosphere"
+	  SrcPort		  4
+	  Points		  [10, 0; 0, 155; -435, 0; 0, -570]
+	  DstBlock		  "Aerodynamics"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Atmosphere"
+	  SrcPort		  3
+	  Points		  [15, 0; 0, 190; -445, 0; 0, -395]
+	  Branch {
+	    DstBlock		    "GA Propulsion System"
+	    DstPort		    5
+	  }
+	  Branch {
+	    Points		    [0, -190]
+	    DstBlock		    "Aerodynamics"
+	    DstPort		    6
+	  }
+	}
+	Line {
+	  SrcBlock		  "Atmosphere"
+	  SrcPort		  5
+	  Points		  [20, 0; 0, 105; -460, 0; 0, -660]
+	  DstBlock		  "Aerodynamics"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Winds"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Atmosphere"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  2
+	  Points		  [80, 0; 0, 55]
+	  Branch {
+	    DstBlock		    "AGL"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 270; -545, 0; 0, -205]
+	    DstBlock		    "Atmosphere"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  1
+	  Points		  [85, 0; 0, 50]
+	  Branch {
+	    DstBlock		    "MSL"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 295; -545, 0; 0, -240]
+	    DstBlock		    "Atmosphere"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Aerodynamics"
+	  SrcPort		  4
+	  Points		  [130, 0; 0, 310]
+	  Branch {
+	    Points		    [0, 130]
+	    Branch {
+	      Points		      [-10, 0; 0, 195]
+	      DstBlock		      "VelW"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [30, 0]
+	      DstBlock		      "Atmosphere"
+	      DstPort		      5
+	    }
+	  }
+	  Branch {
+	    Points		    [-255, 0; 0, -70]
+	    DstBlock		    "GA Propulsion System"
+	    DstPort		    6
+	  }
+	}
+	Line {
+	  SrcBlock		  "GA Propulsion System"
+	  SrcPort		  4
+	  Points		  [135, 0; 0, -180]
+	  DstBlock		  "Aircraft Inertia"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GA Propulsion System"
+	  SrcPort		  3
+	  Points		  [295, 0; 0, 90; 160, 0; 0, -80; 260, 0; 0, -90]
+	  DstBlock		  "Mux7"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Aircraft Inertia"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 260; 160, 0; 0, -80; 240, 0; 0, -110]
+	  DstBlock		  "Mux7"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  Points		  [105, 0; 0, -145; 255, 0; 0, 20]
+	  DstBlock		  "Mux4"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Aerodynamics"
+	  SrcPort		  6
+	  Points		  [140, 0; 0, 250; 160, 0; 0, 50]
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Atmosphere"
+	  SrcPort		  2
+	  Points		  [0, -15; 40, 0]
+	  Branch {
+	    Points		    [0, 260; -450, 0; 0, -435]
+	    DstBlock		    "GA Propulsion System"
+	    DstPort		    4
+	  }
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Atmosphere"
+	  SrcPort		  1
+	  Points		  [0, -5; 35, 0]
+	  Branch {
+	    Points		    [0, 285; -450, 0; 0, -455]
+	    DstBlock		    "GA Propulsion System"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  6
+	  Points		  [90, 0; 0, 360]
+	  Branch {
+	    Points		    [0, 135; -565, 0; 0, -50]
+	    DstBlock		    "Atmosphere"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Points		    [-215, 0; 0, -85]
+	    DstBlock		    "Earth"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "GA Propulsion System"
+	  SrcPort		  2
+	  Points		  [145, 0; 0, 35]
+	  DstBlock		  "Total Moment"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "GA Propulsion System"
+	  SrcPort		  1
+	  Points		  [150, 0; 0, 45; 170, 0]
+	  Branch {
+	    DstBlock		    "Total Moment"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, -175]
+	    DstBlock		    "Total Acceleration"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Aerodynamics"
+	  SrcPort		  2
+	  Points		  [325, 0; 0, 190]
+	  DstBlock		  "Total Moment"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Aerodynamics"
+	  SrcPort		  1
+	  Points		  [330, 0; 0, 30]
+	  Branch {
+	    DstBlock		    "Total Moment"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Total Acceleration"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Aircraft Inertia"
+	  SrcPort		  3
+	  Points		  [40, 0; 0, 140]
+	  DstBlock		  "Total Moment"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Total Moment"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -150]
+	  DstBlock		  "Equations of Motion"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Aircraft Inertia"
+	  SrcPort		  4
+	  Points		  [185, 0; 0, -55]
+	  DstBlock		  "Equations of Motion"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Aircraft Inertia"
+	  SrcPort		  2
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    Points		    [0, 265; -145, 0; 0, 280]
+	    DstBlock		    "Mass"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [45, 0; 0, -15]
+	    DstBlock		    "Total Acceleration"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  4
+	  Points		  [65, 0; 0, 135; -215, 0; 0, -385]
+	  DstBlock		  "Equations of Motion"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  6
+	  Points		  [60, 0; 0, 80; -205, 0; 0, -355]
+	  DstBlock		  "Equations of Motion"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  7
+	  Points		  [115, 0; 0, -135]
+	  DstBlock		  "Mux4"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Total Acceleration"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, 190]
+	    DstBlock		    "Mux4"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Equations of Motion"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  5
+	  Points		  [80, 0; 0, 80]
+	  DstBlock		  "Mux4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  3
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    Points		    [0, 150; -140, 0; 0, -325]
+	    DstBlock		    "Equations of Motion"
+	    DstPort		    6
+	  }
+	  Branch {
+	    DstBlock		    "AConGnd"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  5
+	  DstBlock		  "REarth"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GA Propulsion System"
+	  SrcPort		  6
+	  DstBlock		  "PropCoeff"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GA Propulsion System"
+	  SrcPort		  5
+	  DstBlock		  "EngCoeff"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Controls"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux4"
+	  SrcPort		  1
+	  DstBlock		  "Sensors"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux7"
+	  SrcPort		  1
+	  DstBlock		  "States"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 40]
+	  DstBlock		  "GA Propulsion System"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  1
+	  Points		  [0, 0; 110, 0]
+	  Branch {
+	    Points		    [0, 630; -600, 0]
+	    Branch {
+	      Points		      [-290, 0; 0, -675]
+	      DstBlock		      "Aerodynamics"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -140]
+	      DstBlock		      "Atmosphere"
+	      DstPort		      4
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mux7"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  2
+	  Points		  [0, 0; 95, 0]
+	  Branch {
+	    Points		    [0, 205]
+	    Branch {
+	      Points		      [0, 395; -865, 0; 0, -630]
+	      DstBlock		      "Aerodynamics"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "Mux4"
+	      DstPort		      4
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mux7"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  4
+	  Points		  [0, 0; 105, 0]
+	  Branch {
+	    Points		    [0, 80]
+	    Branch {
+	      Points		      [0, 325; -235, 0; 0, -175]
+	      DstBlock		      "Earth"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Mux4"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mux7"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Aerodynamics"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Equations of Motion"
+	  SrcPort		  3
+	  DstBlock		  "Mux7"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Aerodynamics"
+	  SrcPort		  5
+	  DstBlock		  "Mach"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Aerodynamics"
+	  SrcPort		  3
+	  DstBlock		  "AeroCoeff"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Earth"
+	  SrcPort		  8
+	  DstBlock		  "ECEF"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Solve equations of motion"
+	  Position		  [841, 75]
+	}
+	Annotation {
+	  Name			  "Inputs"
+	  Position		  [36, 74]
+	}
+	Annotation {
+	  Name			  "Outputs"
+	  Position		  [1053, 65]
+	}
+	Annotation {
+	  Name			  "Aerodynamic Model"
+	  Position		  [228, 18]
+	}
+	Annotation {
+	  Name			  "Earth Model"
+	  Position		  [847, 338]
+	}
+	Annotation {
+	  Name			  "Sum forces and moments"
+	  Position		  [673, 32]
+	}
+	Annotation {
+	  Name			  "Atmosphere Model"
+	  Position		  [512, 433]
+	}
+	Annotation {
+	  Name			  "Propulsion Model"
+	  Position		  [228, 215]
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Flap"
+      Position		      [15, 71, 55, 89]
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Heading"
+      Ports		      [1]
+      Position		      [1100, 646, 1185, 674]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Ignition"
+      Position		      [15, 281, 55, 299]
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+      Ports		      [5, 1]
+      Position		      [610, 185, 695, 305]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+	Location		[2, 72, 1918, 1149]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "States"
+	  Position		  [35, 743, 65, 757]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Flight Dynamics"
+	  Position		  [35, 178, 65, 192]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Euler"
+	  Position		  [35, 123, 65, 137]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Flight Trajectory"
+	  Position		  [35, 63, 65, 77]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Control Commands"
+	  Position		  [35, 238, 65, 252]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "Commands to Workspace"
+	  Position		  [190, 230, 250, 260]
+	  VariableName		  "command"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux2"
+	  Ports			  [1, 15]
+	  Position		  [245, 495, 250, 1005]
+	  ShowName		  off
+	  Outputs		  "15"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Engine Speed"
+	  Position		  [445, 985, 465, 1005]
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "Euler to Workspace"
+	  Position		  [190, 115, 250, 145]
+	  VariableName		  "euler"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "Flight Dynamics to Workspace"
+	  Position		  [190, 170, 250, 200]
+	  VariableName		  "fdynamics"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "Flight Trajetory to Workspace"
+	  Position		  [190, 55, 250, 85]
+	  VariableName		  "flighttraj"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Fuel Mass"
+	  Position		  [445, 950, 465, 970]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Groundspeed X-axis"
+	  Position		  [445, 495, 465, 515]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Groundspeed Y-axis"
+	  Position		  [445, 530, 465, 550]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Groundspeed Z-axis"
+	  Position		  [445, 565, 465, 585]
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux3"
+	  Ports			  [3, 1]
+	  Position		  [515, 838, 520, 942]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux4"
+	  Ports			  [4, 1]
+	  Position		  [245, 377, 250, 463]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion e0"
+	  Position		  [445, 705, 465, 725]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion ex"
+	  Position		  [445, 740, 465, 760]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion ey"
+	  Position		  [445, 775, 465, 795]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion ez"
+	  Position		  [445, 810, 465, 830]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Roll rate p"
+	  Position		  [445, 600, 465, 620]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Roll rate q"
+	  Position		  [445, 635, 465, 655]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Yaw rate r"
+	  Position		  [445, 670, 465, 690]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "euler to Flightgear Interface"
+	  Position		  [615, 360, 635, 380]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "lat, long, alt to Flightgear Interface"
+	  Position		  [615, 880, 635, 900]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "All States"
+	  Position		  [285, 413, 315, 427]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Euler"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    Points		    [0, 280]
+	    DstBlock		    "Mux4"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [20, 0]
+	    Branch {
+	      DstBlock		      "Euler to Workspace"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 240]
+	      DstBlock		      "euler to Flightgear Interface"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Flight Trajectory"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  Branch {
+	    DstBlock		    "Flight Trajetory to Workspace"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 320]
+	    DstBlock		    "Mux4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Flight Dynamics"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    DstBlock		    "Flight Dynamics to Workspace"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 245]
+	    DstBlock		    "Mux4"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Control Commands"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    DstBlock		    "Commands to Workspace"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 205]
+	    DstBlock		    "Mux4"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux4"
+	  SrcPort		  1
+	  DstBlock		  "All States"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  1
+	  DstBlock		  "Groundspeed X-axis"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  2
+	  DstBlock		  "Groundspeed Y-axis"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  3
+	  DstBlock		  "Groundspeed Z-axis"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  8
+	  DstBlock		  "Quaternion ex"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  9
+	  DstBlock		  "Quaternion ey"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  10
+	  DstBlock		  "Quaternion ez"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  14
+	  DstBlock		  "Fuel Mass"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  15
+	  DstBlock		  "Engine Speed"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  11
+	  DstBlock		  "Mux3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  12
+	  DstBlock		  "Mux3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  13
+	  DstBlock		  "Mux3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "States"
+	  SrcPort		  1
+	  DstBlock		  "Demux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  7
+	  DstBlock		  "Quaternion e0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux3"
+	  SrcPort		  1
+	  DstBlock		  "lat, long, alt to Flightgear Interface"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  4
+	  DstBlock		  "Roll rate p"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  5
+	  DstBlock		  "Roll rate q"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  6
+	  DstBlock		  "Yaw rate r"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Mixture"
+      Position		      [15, 246, 55, 264]
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+      Value		      "13"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [7, 1]
+      Position		      [190, 65, 195, 305]
+      ShowName		      off
+      Inputs		      "7"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      Ports		      [3, 1]
+      Position		      [540, 152, 545, 238]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux3"
+      Ports		      [7, 1]
+      Position		      [770, 525, 775, 675]
+      ShowName		      off
+      Inputs		      "7"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux4"
+      Ports		      [3, 1]
+      Position		      [235, 752, 240, 838]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Pitch angle"
+      Ports		      [1]
+      Position		      [1100, 546, 1185, 574]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Radians\nto Degrees"
+      Ports		      [1, 1]
+      Position		      [390, 365, 415, 395]
+      BackgroundColor	      "green"
+      DropShadow	      on
+      ShowName		      off
+      SourceBlock	      "simulink_extras/Transformations/Radians\nto Degrees"
+      SourceType	      "RadiansToDegrees"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Radians\nto Degrees1"
+      Ports		      [1, 1]
+      Position		      [410, 210, 435, 240]
+      BackgroundColor	      "green"
+      DropShadow	      on
+      ShowName		      off
+      SourceBlock	      "simulink_extras/Transformations/Radians\nto Degrees"
+      SourceType	      "RadiansToDegrees"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Radians\nto Degrees2"
+      Ports		      [1, 1]
+      Position		      [445, 180, 470, 210]
+      BackgroundColor	      "green"
+      DropShadow	      on
+      ShowName		      off
+      SourceBlock	      "simulink_extras/Transformations/Radians\nto Degrees"
+      SourceType	      "RadiansToDegrees"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Reset"
+      Position		      [15, 376, 55, 394]
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Rudder"
+      Position		      [15, 176, 55, 194]
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Rudder \nDeflection\n Limits"
+      Position		      [2195, 810, 2225, 840]
+      BlockMirror	      on
+      UpperLimit	      "+15"
+      LowerLimit	      "-15"
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Saturation2"
+      Position		      [2060, 935, 2090, 965]
+      BlockMirror	      on
+      UpperLimit	      "+5"
+      LowerLimit	      "-5"
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Saturation3"
+      Position		      [2060, 1000, 2090, 1030]
+      BlockMirror	      on
+      UpperLimit	      "+10"
+      LowerLimit	      "-10"
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Saturation4"
+      Position		      [2060, 1070, 2090, 1100]
+      BlockMirror	      on
+      UpperLimit	      "+5"
+      LowerLimit	      "-5"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Sideslip"
+      Ports		      [1]
+      Position		      [1100, 746, 1185, 774]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Stop
+      Name		      "Stop Simulation\nwhen A/C on the ground"
+      Position		      [385, 407, 420, 443]
+      BackgroundColor	      "red"
+      DropShadow	      on
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum10"
+      Ports		      [2, 1]
+      Position		      [2285, 940, 2305, 960]
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum11"
+      Ports		      [2, 1]
+      Position		      [2155, 695, 2175, 715]
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum12"
+      Ports		      [2, 1]
+      Position		      [1950, 785, 1970, 805]
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum13"
+      Ports		      [2, 1]
+      Position		      [2155, 785, 2175, 805]
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum8"
+      Ports		      [2, 1]
+      Position		      [1950, 630, 1970, 650]
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum9"
+      Ports		      [3, 1]
+      Position		      [1995, 940, 2020, 990]
+      BlockMirror	      on
+      ShowName		      off
+      Inputs		      "+++"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "WP East"
+      Ports		      [1]
+      Position		      [1100, 351, 1185, 379]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "WP North"
+      Ports		      [1]
+      Position		      [1100, 396, 1185, 424]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Waypoint"
+      Ports		      [1]
+      Position		      [1100, 496, 1185, 524]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Waypoint Guidance \nSubsystem"
+      Ports		      [1, 8]
+      Position		      [600, 527, 705, 693]
+      BackgroundColor	      "orange"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Waypoint Guidance \nSubsystem"
+	Location		[272, 429, 1240, 1011]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Sensors"
+	  Position		  [40, 278, 70, 292]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux2"
+	  Ports			  [1, 15]
+	  Position		  [110, 30, 115, 540]
+	  ShowName		  off
+	  Outputs		  "15"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux3"
+	  Ports			  [1, 6]
+	  Position		  [650, 336, 655, 514]
+	  ShowName		  off
+	  Outputs		  "6"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  MATLABFcn
+	  Name			  "Determine Current Waypoint\n& A/C Location in ENU"
+	  Ports			  [1, 1]
+	  Position		  [545, 410, 605, 440]
+	  MATLABFcn		  "waypoint(u(1), u(2), u(3))"
+	  OutputDimensions	  "6"
+	}
+	Block {
+	  BlockType		  MATLABFcn
+	  Name			  "Determine Desired Heading\n(deg)"
+	  Ports			  [1, 1]
+	  Position		  [760, 380, 820, 410]
+	  MATLABFcn		  "heading(u(1), u(2), u(3),u(4))"
+	  OutputDimensions	  "1"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Engine Speed"
+	  Position		  [310, 520, 330, 540]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Fuel Mass"
+	  Position		  [310, 485, 330, 505]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Groundspeed X-axis"
+	  Position		  [310, 30, 330, 50]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Groundspeed Y-axis"
+	  Position		  [310, 65, 330, 85]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Groundspeed Z-axis"
+	  Position		  [310, 100, 330, 120]
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  Position		  [560, 515, 590, 545]
+	  BlockMirror		  on
+	  X0			  "1"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  Ports			  [3, 1]
+	  Position		  [495, 375, 500, 475]
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  Ports			  [4, 1]
+	  Position		  [700, 334, 705, 456]
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion e0"
+	  Position		  [310, 240, 330, 260]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion ex"
+	  Position		  [310, 275, 330, 295]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion ey"
+	  Position		  [310, 310, 330, 330]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Quaternion ez"
+	  Position		  [310, 345, 330, 365]
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Radians\nto Degrees3"
+	  Ports			  [1, 1]
+	  Position		  [395, 375, 420, 405]
+	  BackgroundColor	  "green"
+	  DropShadow		  on
+	  ShowName		  off
+	  SourceBlock		  "simulink_extras/Transformations/Radians\nto Degrees"
+	  SourceType		  "RadiansToDegrees"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Radians\nto Degrees4"
+	  Ports			  [1, 1]
+	  Position		  [395, 410, 420, 440]
+	  BackgroundColor	  "green"
+	  DropShadow		  on
+	  ShowName		  off
+	  SourceBlock		  "simulink_extras/Transformations/Radians\nto Degrees"
+	  SourceType		  "RadiansToDegrees"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData "off"
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Roll rate p"
+	  Position		  [310, 135, 330, 155]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Roll rate q"
+	  Position		  [310, 170, 330, 190]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Yaw rate r"
+	  Position		  [310, 205, 330, 225]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "AC East"
+	  Position		  [700, 143, 730, 157]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "AC North"
+	  Position		  [700, 178, 730, 192]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Altitude"
+	  Position		  [305, 453, 335, 467]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "WP East"
+	  Position		  [700, 218, 730, 232]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "WP North"
+	  Position		  [700, 253, 730, 267]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Desired Altitude"
+	  Position		  [895, 463, 925, 477]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "WP"
+	  Position		  [700, 288, 730, 302]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Desired Heading"
+	  Position		  [895, 388, 925, 402]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "Determine Current Waypoint\n& A/C Location in ENU"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [-75, 0]
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Determine Current Waypoint\n& A/C Location in ENU"
+	  SrcPort		  1
+	  DstBlock		  "Demux3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -200]
+	    DstBlock		    "AC East"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  3
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, -185]
+	    DstBlock		    "WP East"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  4
+	  Points		  [20, 0]
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "WP North"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  DstBlock		  "Determine Desired Heading\n(deg)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  11
+	  DstBlock		  "Radians\nto Degrees3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Radians\nto Degrees3"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  12
+	  DstBlock		  "Radians\nto Degrees4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Radians\nto Degrees4"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  2
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -195]
+	    DstBlock		    "AC North"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  6
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, 30]
+	    DstBlock		    "Memory"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "WP"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  1
+	  DstBlock		  "Groundspeed X-axis"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  2
+	  DstBlock		  "Groundspeed Y-axis"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  3
+	  DstBlock		  "Groundspeed Z-axis"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  4
+	  DstBlock		  "Roll rate p"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  5
+	  DstBlock		  "Roll rate q"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  6
+	  DstBlock		  "Yaw rate r"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  7
+	  DstBlock		  "Quaternion e0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  8
+	  DstBlock		  "Quaternion ex"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  9
+	  DstBlock		  "Quaternion ey"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  10
+	  DstBlock		  "Quaternion ez"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  14
+	  DstBlock		  "Fuel Mass"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  15
+	  DstBlock		  "Engine Speed"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sensors"
+	  SrcPort		  1
+	  DstBlock		  "Demux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Determine Desired Heading\n(deg)"
+	  SrcPort		  1
+	  DstBlock		  "Desired Heading"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  13
+	  DstBlock		  "Altitude"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  5
+	  DstBlock		  "Desired Altitude"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Winds"
+      Position		      [15, 321, 55, 339]
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+      Value		      "[0 0 0]"
+    }
+    Line {
+      SrcBlock		      "Reset"
+      SrcPort		      1
+      DstBlock		      "Flamingo UAV"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Winds"
+      SrcPort		      1
+      Points		      [155, 0; 0, -45]
+      DstBlock		      "Flamingo UAV"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Flamingo UAV"
+      SrcPort		      1
+      Points		      [160, 0]
+      Branch {
+	Points			[0, 465]
+	DstBlock		"Waypoint Guidance \nSubsystem"
+	DstPort			1
+      }
+      Branch {
+	Points			[75, 0]
+	Branch {
+	  Points		  [605, 0; 0, 415]
+	  DstBlock		  "Aircraft states"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 50]
+	  DstBlock		  "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Flamingo UAV"
+      SrcPort		      6
+      Points		      [15, 0]
+      Branch {
+	Points			[0, 135]
+	DstBlock		"Radians\nto Degrees"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Flamingo UAV"
+      SrcPort		      3
+      Points		      [10, 0]
+      DstBlock		      "Demux"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      3
+      DstBlock		      "Radians\nto Degrees1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      DstBlock		      "Radians\nto Degrees2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      Points		      [120, 0]
+      Branch {
+	Points			[0, 455]
+	DstBlock		"Control Block"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Mux1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Flamingo UAV"
+      SrcPort		      15
+      DstBlock		      "Stop Simulation\nwhen A/C on the ground"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Radians\nto Degrees"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Demux1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      Points		      [15, 0; 0, 220]
+      DstBlock		      "Control Block"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Rudder"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Mixture"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Control Block"
+      SrcPort		      2
+      Points		      [-35, 0]
+      Branch {
+	Labels			[1, 0]
+	Points			[-70, 0; 0, -505]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 175]
+	DstBlock		"Mux4"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Control Block"
+      SrcPort		      1
+      Points		      [-30, 0]
+      Branch {
+	Points			[-70, 0; 0, -425]
+	DstBlock		"Mux"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 190]
+	DstBlock		"Mux4"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      3
+      Points		      [10, 0; 0, 140]
+      DstBlock		      "Control Block"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Airspeed\nCommand"
+      SrcPort		      1
+      DstBlock		      "Control Block"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Control Block"
+      SrcPort		      3
+      Points		      [-40, 0]
+      Branch {
+	Points			[-70, 0; 0, -445]
+	DstBlock		"Mux"
+	DstPort			5
+      }
+      Branch {
+	Points			[0, 160]
+	DstBlock		"Mux4"
+	DstPort			3
+      }
+    }
+    Line {
+      Points		      [2210, 680; 0, 5; 30, 0; 0, 20]
+      Branch {
+	Points			[0, 90]
+	DstBlock		"Sum13"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Sum11"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Bank-Angle-to-Aileron\nProportional"
+      SrcPort		      1
+      DstBlock		      "Sum8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bank Angle\nIntegrator"
+      SrcPort		      1
+      DstBlock		      "Bank-Angle-to-Aileron\nIntegral"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bank-Angle-to-Aileron\nIntegral"
+      SrcPort		      1
+      Points		      [-50, 0]
+      DstBlock		      "Sum8"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Airspeed Error\nDerivative"
+      SrcPort		      1
+      DstBlock		      "Airspeed-to-Elevator\nDerivative2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Airspeed Error\nIntegrator"
+      SrcPort		      1
+      DstBlock		      "Airspeed-to-Elevator\nIntegral2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Airspeed-to-Elevator\nProportional2"
+      SrcPort		      1
+      DstBlock		      "Saturation2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Airspeed-to-Elevator\nIntegral2"
+      SrcPort		      1
+      DstBlock		      "Saturation3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Airspeed-to-Elevator\nDerivative2"
+      SrcPort		      1
+      DstBlock		      "Saturation4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum10"
+      SrcPort		      1
+      Points		      [-5, 0]
+      Branch {
+	DstBlock		"Airspeed-to-Elevator\nProportional2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 65]
+	Branch {
+	  DstBlock		  "Airspeed Error\nIntegrator"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 70]
+	  DstBlock		  "Airspeed Error\nDerivative"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Sum11"
+      SrcPort		      1
+      Points		      [-5, 0]
+      Branch {
+	Points			[0, -65]
+	DstBlock		"Bank-Angle-to-Aileron\nProportional"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Bank Angle\nIntegrator"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Bank-Angle-to-Rudder\nProportional"
+      SrcPort		      1
+      DstBlock		      "Sum12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bank Angle\nIntegrator1"
+      SrcPort		      1
+      DstBlock		      "Bank-Angle-to-Rudder\nIntegral"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bank-Angle-to-Rudder\nIntegral"
+      SrcPort		      1
+      Points		      [-50, 0]
+      DstBlock		      "Sum12"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum13"
+      SrcPort		      1
+      Points		      [-5, 0]
+      Branch {
+	DstBlock		"Bank-Angle-to-Rudder\nProportional"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Bank Angle\nIntegrator1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Rudder \nDeflection\n Limits"
+      SrcPort		      1
+      Points		      [-25, 0]
+      DstBlock		      "Sum13"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Aileron \nDeflection \nLimits"
+      SrcPort		      1
+      Points		      [-25, 0]
+      DstBlock		      "Sum11"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Airspeed\nCmd"
+      SrcPort		      1
+      DstBlock		      "Sum10"
+      DstPort		      2
+    }
+    Line {
+      Points		      [2195, 900; 0, -15; 65, 0; 0, -60]
+      Branch {
+	Labels			[1, 0]
+	DstBlock		"Rudder \nDeflection\n Limits"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -90]
+	DstBlock		"Aileron \nDeflection \nLimits"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Saturation2"
+      SrcPort		      1
+      DstBlock		      "Sum9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Saturation3"
+      SrcPort		      1
+      Points		      [-10, 0; 0, -50]
+      DstBlock		      "Sum9"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Saturation4"
+      SrcPort		      1
+      Points		      [-20, 0]
+      DstBlock		      "Sum9"
+      DstPort		      3
+    }
+    Line {
+      Points		      [2325, 950]
+      DstBlock		      "Sum10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum8"
+      SrcPort		      1
+      Points		      [-15, 0]
+    }
+    Line {
+      SrcBlock		      "Sum12"
+      SrcPort		      1
+      Points		      [-15, 0]
+    }
+    Line {
+      SrcBlock		      "Sum9"
+      SrcPort		      1
+      Points		      [-65, 0]
+    }
+    Line {
+      SrcBlock		      "Flap"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Ignition"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Flamingo UAV"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      2
+      DstBlock		      "Mux3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      4
+      DstBlock		      "Mux3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      5
+      DstBlock		      "Mux3"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      3
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"Mux3"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 170; -285, 0; 0, -70]
+	DstBlock		"Control Block"
+	DstPort			7
+      }
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      6
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"Mux3"
+	DstPort			6
+      }
+      Branch {
+	Points			[0, 105; -275, 0; 0, -85]
+	DstBlock		"Control Block"
+	DstPort			6
+      }
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      8
+      Points		      [15, 0; 0, 60; -265, 0; 0, -140]
+      DstBlock		      "Control Block"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Radians\nto Degrees2"
+      SrcPort		      1
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Radians\nto Degrees1"
+      SrcPort		      1
+      DstBlock		      "Mux1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [5, 0; 0, 25]
+      DstBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux3"
+      SrcPort		      1
+      Points		      [0, -80; -260, 0; 0, -250]
+      DstBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      Points		      [540, 0; 0, -280; -260, 0; 0, -220]
+      DstBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
+      SrcPort		      1
+      Points		      [0, -95; 220, 0]
+      DstBlock		      "Demux2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      7
+      DstBlock		      "Mux3"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Waypoint Guidance \nSubsystem"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      1
+      Points		      [0, 45]
+      DstBlock		      "AC East"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      2
+      Points		      [0, 90]
+      DstBlock		      "AC North"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      3
+      Points		      [0, 140]
+      DstBlock		      "Altitude"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      4
+      Points		      [0, 185]
+      DstBlock		      "WP East"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      5
+      Points		      [0, 230]
+      DstBlock		      "WP North"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      6
+      Points		      [0, 280]
+      DstBlock		      "Desired Altitude"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      7
+      Points		      [0, 330]
+      DstBlock		      "Waypoint"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      8
+      Points		      [0, 380]
+      DstBlock		      "Pitch angle"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      9
+      Points		      [0, 430]
+      DstBlock		      "Bank angle"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      10
+      Points		      [0, 480]
+      DstBlock		      "Heading"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      11
+      Points		      [0, 530]
+      DstBlock		      "Airspeed"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      12
+      Points		      [0, 580]
+      DstBlock		      "Sideslip"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      13
+      Points		      [0, 630]
+      DstBlock		      "AOA"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      14
+      Points		      [0, 680]
+      DstBlock		      "Command Aileron"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      15
+      Points		      [0, 730]
+      DstBlock		      "Command Elevator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      16
+      Points		      [0, 780]
+      DstBlock		      "Command Throttle"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "Groundspeed X-axis"
+      Position		      [1362, 423]
+    }
+    Annotation {
+      Name		      "Groundspeed Y-axis"
+      Position		      [1362, 443]
+    }
+    Annotation {
+      Name		      "Groundspeed Z-axis"
+      Position		      [1362, 463]
+    }
+    Annotation {
+      Name		      "Roll rate p"
+      Position		      [1342, 483]
+    }
+    Annotation {
+      Name		      "Pitch rate q"
+      Position		      [1342, 503]
+    }
+    Annotation {
+      Name		      "Yaw rate r"
+      Position		      [1342, 523]
+    }
+    Annotation {
+      Name		      "Quaternion e0"
+      Position		      [1352, 543]
+    }
+    Annotation {
+      Name		      "Quaternion ex"
+      Position		      [1352, 563]
+    }
+    Annotation {
+      Name		      "Quaternion ey"
+      Position		      [1352, 583]
+    }
+    Annotation {
+      Name		      "Quaternion ez"
+      Position		      [1352, 603]
+    }
+    Annotation {
+      Name		      "Latitude"
+      Position		      [1337, 623]
+    }
+    Annotation {
+      Name		      "Longitude"
+      Position		      [1342, 643]
+    }
+    Annotation {
+      Name		      "Altitude"
+      Position		      [1337, 663]
+    }
+    Annotation {
+      Name		      "Fuel mass"
+      Position		      [1342, 683]
+    }
+    Annotation {
+      Name		      "Engine speed"
+      Position		      [1352, 703]
+    }
+    Annotation {
+      Name		      "Aerosonde UAV \nAircraft control:\n longitudinal - closed-loop\n  lateral - closed-loop\nWaypoint N"
+      "avigation\n\nPFMS Project, QUAS\nNicholas Rutherford\nQUT Avionics, 2009"
+      Position		      [1129, 73]
+    }
+    Annotation {
+      Name		      "Bank-Angle-to-Ailerons PI Control"
+      Position		      [1979, 615]
+    }
+    Annotation {
+      Name		      "Airspeed-to-Elevator PID Control"
+      Position		      [2074, 925]
+    }
+    Annotation {
+      Name		      "Bank-Angle-to-Rudder PID Control"
+      Position		      [1979, 770]
+    }
+  }
+}
