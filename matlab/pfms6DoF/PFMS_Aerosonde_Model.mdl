@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.198"
+    ComputedModelVersion    "1.191"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -23,11 +23,11 @@ Model {
   Creator		  "Nicholas"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Nicholas"
+  LastModifiedBy	  "user"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri May 29 02:47:45 2009"
+  LastModifiedDate	  "Sat May 30 00:30:00 2009"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:198>"
+  ModelVersionFormat	  "1.%<AutoIncrement:191>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -516,7 +516,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    " [ 520, 285, 1400, 915 ] "
+      ConfigPrmDlgPosition    " [ 280, 135, 1160, 765 ] "
     }
     PropName		    "ConfigurationSets"
   }
@@ -766,7 +766,7 @@ Model {
   }
   System {
     Name		    "PFMS_Aerosonde_Model"
-    Location		    [2, 72, 1901, 1132]
+    Location		    [2, 73, 1422, 834]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -784,7 +784,7 @@ Model {
       BlockType		      Display
       Name		      "AC East"
       Ports		      [1]
-      Position		      [1100, 211, 1185, 239]
+      Position		      [1135, 211, 1220, 239]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -794,7 +794,7 @@ Model {
       BlockType		      Display
       Name		      "AC North"
       Ports		      [1]
-      Position		      [1100, 256, 1185, 284]
+      Position		      [1135, 256, 1220, 284]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -804,207 +804,7 @@ Model {
       BlockType		      Display
       Name		      "AOA"
       Ports		      [1]
-      Position		      [1100, 796, 1185, 824]
-      BackgroundColor	      "yellow"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Saturate
-      Name		      "Aileron \nDeflection \nLimits"
-      Position		      [2195, 720, 2225, 750]
-      BlockMirror	      on
-      UpperLimit	      "+20"
-      LowerLimit	      "-20"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Aircraft states"
-      Ports		      [1]
-      Position		      [1215, 415, 1300, 705]
-      BackgroundColor	      "cyan"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Airspeed"
-      Ports		      [1]
-      Position		      [1100, 696, 1185, 724]
-      BackgroundColor	      "yellow"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Airspeed\nCmd"
-      Position		      [2300, 991, 2340, 1009]
-      BlockMirror	      on
-      Value		      "23"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Airspeed\nCommand"
-      Position		      [475, 631, 515, 649]
-      BlockMirror	      on
-      BackgroundColor	      "magenta"
-      DropShadow	      on
-      Value		      "25"
-    }
-    Block {
-      BlockType		      Derivative
-      Name		      "Airspeed Error\nDerivative"
-      Position		      [2225, 1070, 2255, 1100]
-      BlockMirror	      on
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Airspeed Error\nIntegrator"
-      Ports		      [1, 1]
-      Position		      [2225, 1000, 2255, 1030]
-      BlockMirror	      on
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Airspeed-to-Elevator\nDerivative2"
-      Position		      [2140, 1070, 2170, 1100]
-      BlockMirror	      on
-      Gain		      "-0.5"
-      ParameterDataType	      "sfix(16)"
-      ParameterScaling	      "2^0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Airspeed-to-Elevator\nIntegral2"
-      Position		      [2140, 1000, 2170, 1030]
-      BlockMirror	      on
-      Gain		      "-0.005"
-      ParameterDataType	      "sfix(16)"
-      ParameterScaling	      "2^0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Airspeed-to-Elevator\nProportional2"
-      Position		      [2140, 935, 2170, 965]
-      BlockMirror	      on
-      Gain		      "-0.03"
-      ParameterDataType	      "sfix(16)"
-      ParameterScaling	      "2^0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Altitude"
-      Ports		      [1]
-      Position		      [1100, 306, 1185, 334]
-      BackgroundColor	      "yellow"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Bank Angle\nIntegrator"
-      Ports		      [1, 1]
-      Position		      [2100, 690, 2130, 720]
-      BlockMirror	      on
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Bank Angle\nIntegrator1"
-      Ports		      [1, 1]
-      Position		      [2100, 845, 2130, 875]
-      BlockMirror	      on
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Bank angle"
-      Ports		      [1]
-      Position		      [1100, 596, 1185, 624]
-      BackgroundColor	      "yellow"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Bank-Angle-to-Aileron\nIntegral"
-      Position		      [2015, 690, 2045, 720]
-      BlockMirror	      on
-      Gain		      "0.05*pi/180"
-      ParameterDataType	      "sfix(16)"
-      ParameterScaling	      "2^0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Bank-Angle-to-Aileron\nProportional"
-      Position		      [2015, 625, 2045, 655]
-      BlockMirror	      on
-      Gain		      "0.5*pi/180"
-      ParameterDataType	      "sfix(16)"
-      ParameterScaling	      "2^0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Bank-Angle-to-Rudder\nIntegral"
-      Position		      [2015, 845, 2045, 875]
-      BlockMirror	      on
-      Gain		      "0.03*pi/180"
-      ParameterDataType	      "sfix(16)"
-      ParameterScaling	      "2^0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Bank-Angle-to-Rudder\nProportional"
-      Position		      [2015, 780, 2045, 810]
-      BlockMirror	      on
-      Gain		      "0.3*pi/180"
-      ParameterDataType	      "sfix(16)"
-      ParameterScaling	      "2^0"
-      OutDataType	      "sfix(16)"
-      OutScaling	      "2^0"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Command Aileron"
-      Ports		      [1]
-      Position		      [1100, 846, 1185, 874]
-      BackgroundColor	      "yellow"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Command Elevator"
-      Ports		      [1]
-      Position		      [1100, 896, 1185, 924]
-      BackgroundColor	      "yellow"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Command Throttle"
-      Ports		      [1]
-      Position		      [1100, 946, 1185, 974]
+      Position		      [1135, 796, 1220, 824]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -1012,837 +812,7 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Control Block"
-      Ports		      [7, 3]
-      Position		      [225, 549, 360, 691]
-      BlockMirror	      on
-      BackgroundColor	      "cyan"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Control Block"
-	Location		[0, 80, 1900, 1171]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Heading"
-	  Position		  [240, 38, 270, 52]
-	  BlockMirror		  on
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Bank Angle"
-	  Position		  [240, 78, 270, 92]
-	  BlockMirror		  on
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Desired Heading"
-	  Position		  [240, 118, 270, 132]
-	  BlockMirror		  on
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Airspeed"
-	  Position		  [240, 213, 270, 227]
-	  BlockMirror		  on
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Desired Airspeed"
-	  Position		  [240, 268, 270, 282]
-	  BlockMirror		  on
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Desired Altitude"
-	  Position		  [240, 373, 270, 387]
-	  BlockMirror		  on
-	  Port			  "6"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Altitude"
-	  Position		  [240, 428, 270, 442]
-	  BlockMirror		  on
-	  Port			  "7"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Airspeed-to-Elevator \nController"
-	  Ports			  [2, 1]
-	  Position		  [80, 192, 205, 303]
-	  BlockMirror		  on
-	  BackgroundColor	  "[0.752941, 0.752941, 0.752941]"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Airspeed-to-Elevator \nController"
-	    Location		    [-87, 367, 1813, 755]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Airspeed"
-	      Position		      [380, 48, 410, 62]
-	      BlockMirror	      on
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Desired Airspeed"
-	      Position		      [380, 103, 410, 117]
-	      BlockMirror	      on
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Derivative
-	      Name		      "Airspeed error\nDerivative"
-	      Position		      [255, 180, 285, 210]
-	      BlockMirror	      on
-	      BackgroundColor	      "yellow"
-	      DropShadow	      on
-	    }
-	    Block {
-	      BlockType		      Integrator
-	      Name		      "Airspeed error\nIntegrator"
-	      Ports		      [1, 1]
-	      Position		      [255, 105, 285, 135]
-	      BlockMirror	      on
-	      BackgroundColor	      "yellow"
-	      DropShadow	      on
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Airspeed-to-Elevator\nDerivative"
-	      Position		      [170, 180, 200, 210]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "-0.5"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Airspeed-to-Elevator\nIntegral"
-	      Position		      [170, 105, 200, 135]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "-0.005"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Airspeed-to-Elevator\nProportional"
-	      Position		      [170, 40, 200, 70]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "-0.03"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum1"
-	      Ports		      [3, 1]
-	      Position		      [80, 45, 105, 95]
-	      BlockMirror	      on
-	      BackgroundColor	      "green"
-	      DropShadow	      on
-	      ShowName		      off
-	      Inputs		      "+++"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum2"
-	      Ports		      [2, 1]
-	      Position		      [325, 45, 345, 65]
-	      BlockMirror	      on
-	      BackgroundColor	      "green"
-	      DropShadow	      on
-	      ShowName		      off
-	      IconShape		      "round"
-	      Inputs		      "|+-"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Elevator"
-	      Position		      [25, 63, 55, 77]
-	      BlockMirror	      on
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "Airspeed error\nDerivative"
-	      SrcPort		      1
-	      DstBlock		      "Airspeed-to-Elevator\nDerivative"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Airspeed error\nIntegrator"
-	      SrcPort		      1
-	      DstBlock		      "Airspeed-to-Elevator\nIntegral"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Airspeed-to-Elevator\nProportional"
-	      SrcPort		      1
-	      DstBlock		      "Sum1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Airspeed-to-Elevator\nIntegral"
-	      SrcPort		      1
-	      Points		      [-30, 0; 0, -50]
-	      DstBlock		      "Sum1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Airspeed-to-Elevator\nDerivative"
-	      SrcPort		      1
-	      Points		      [-35, 0; 0, -110]
-	      DstBlock		      "Sum1"
-	      DstPort		      3
-	    }
-	    Line {
-	      SrcBlock		      "Sum2"
-	      SrcPort		      1
-	      Points		      [-10, 0]
-	      Branch {
-		DstBlock		"Airspeed-to-Elevator\nProportional"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, 65]
-		Branch {
-		  DstBlock		  "Airspeed error\nIntegrator"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, 75]
-		  DstBlock		  "Airspeed error\nDerivative"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Airspeed"
-	      SrcPort		      1
-	      DstBlock		      "Sum2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Sum1"
-	      SrcPort		      1
-	      DstBlock		      "Elevator"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Desired Airspeed"
-	      SrcPort		      1
-	      Points		      [-40, 0]
-	      DstBlock		      "Sum2"
-	      DstPort		      2
-	    }
-	    Annotation {
-	      Name		      "Airspeed-To-Elevator PID control"
-	      Position		      [204, 25]
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Altitude-to-Throttle \nController"
-	  Ports			  [2, 1]
-	  Position		  [80, 351, 205, 464]
-	  BlockMirror		  on
-	  BackgroundColor	  "[0.752941, 0.752941, 0.752941]"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Altitude-to-Throttle \nController"
-	    Location		    [2, 80, 1902, 1157]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Desired Altitude"
-	      Position		      [575, 130, 605, 145]
-	      BlockRotation	      270
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Altitude"
-	      Position		      [640, 78, 670, 92]
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Altitude-to-Throttle\nIntegral"
-	      Position		      [380, 175, 410, 205]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "-0.00080"
-	    }
-	    Block {
-	      BlockType		      Integrator
-	      Name		      "Altitude-to-Throttle\nIntegrator"
-	      Ports		      [1, 1]
-	      Position		      [490, 175, 520, 205]
-	      BlockMirror	      on
-	      BackgroundColor	      "yellow"
-	      DropShadow	      on
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Altitude-to-Throttle\nProportional"
-	      Position		      [380, 70, 410, 100]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "-0.045"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Integral Saturation"
-	      Position		      [285, 175, 315, 205]
-	      BlockMirror	      on
-	      BackgroundColor	      "red"
-	      UpperLimit	      ".8"
-	      LowerLimit	      "0"
-	      OutDataType	      "fixdt(1, 16)"
-	      OutScaling	      "2^0"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation Throttle"
-	      Position		      [125, 80, 155, 110]
-	      BlockMirror	      on
-	      BackgroundColor	      "red"
-	      UpperLimit	      "1.5"
-	      LowerLimit	      "0"
-	      OutDataType	      "fixdt(1, 16)"
-	      OutScaling	      "2^0"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum5"
-	      Ports		      [2, 1]
-	      Position		      [210, 72, 235, 123]
-	      BlockMirror	      on
-	      BackgroundColor	      "green"
-	      DropShadow	      on
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum6"
-	      Ports		      [2, 1]
-	      Position		      [580, 75, 600, 95]
-	      BlockMirror	      on
-	      BackgroundColor	      "green"
-	      ShowName		      off
-	      IconShape		      "round"
-	      Inputs		      "|+-"
-	      InputSameDT	      off
-	      OutDataTypeMode	      "Inherit via internal rule"
-	      OutDataType	      "fixdt(1, 16)"
-	      OutScaling	      "2^0"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Throttle"
-	      Position		      [55, 88, 85, 102]
-	      BlockMirror	      on
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "Sum6"
-	      SrcPort		      1
-	      Points		      [-30, 0]
-	      Branch {
-		DstBlock		"Altitude-to-Throttle\nProportional"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, 105]
-		DstBlock		"Altitude-to-Throttle\nIntegrator"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Integral Saturation"
-	      SrcPort		      1
-	      Points		      [-15, 0; 0, -80]
-	      DstBlock		      "Sum5"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Altitude-to-Throttle\nIntegral"
-	      SrcPort		      1
-	      DstBlock		      "Integral Saturation"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Sum5"
-	      SrcPort		      1
-	      Points		      [0, -5]
-	      DstBlock		      "Saturation Throttle"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Altitude-to-Throttle\nProportional"
-	      SrcPort		      1
-	      DstBlock		      "Sum5"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Altitude-to-Throttle\nIntegrator"
-	      SrcPort		      1
-	      DstBlock		      "Altitude-to-Throttle\nIntegral"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Altitude"
-	      SrcPort		      1
-	      DstBlock		      "Sum6"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Desired Altitude"
-	      SrcPort		      1
-	      DstBlock		      "Sum6"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Saturation Throttle"
-	      SrcPort		      1
-	      DstBlock		      "Throttle"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Bank-angle-to-Aileron\nController"
-	  Ports			  [3, 1]
-	  Position		  [80, 28, 205, 142]
-	  BlockMirror		  on
-	  BackgroundColor	  "[0.752941, 0.752941, 0.752941]"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Bank-angle-to-Aileron\nController"
-	    Location		    [474, 628, 1589, 1216]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Heading"
-	      Position		      [675, 123, 705, 137]
-	      BlockMirror	      on
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Bank Angle"
-	      Position		      [345, 30, 375, 45]
-	      BlockRotation	      270
-	      BlockMirror	      on
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Desired Heading"
-	      Position		      [620, 175, 650, 190]
-	      BlockRotation	      270
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Integrator
-	      Name		      "Bank angle\nIntegrator"
-	      Ports		      [1, 1]
-	      Position		      [230, 115, 260, 145]
-	      BlockMirror	      on
-	      BackgroundColor	      "yellow"
-	      DropShadow	      on
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Bank-angle-to-Aileron\nIntegral"
-	      Position		      [145, 115, 175, 145]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "0.05*pi/180"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Bank-angle-to-Aileron\nProportional"
-	      Position		      [145, 50, 175, 80]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "0.5*pi/180"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Heading-to-Bank Angle\nProportional"
-	      Position		      [505, 115, 535, 145]
-	      BlockMirror	      on
-	      BackgroundColor	      "lightBlue"
-	      DropShadow	      on
-	      Gain		      "-0.8"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation Bank Angle"
-	      Position		      [380, 115, 410, 145]
-	      BlockMirror	      on
-	      BackgroundColor	      "red"
-	      UpperLimit	      "20"
-	      LowerLimit	      "-20"
-	      OutDataType	      "fixdt(1, 16)"
-	      OutScaling	      "2^0"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum"
-	      Ports		      [2, 1]
-	      Position		      [80, 55, 100, 75]
-	      BlockMirror	      on
-	      BackgroundColor	      "green"
-	      DropShadow	      on
-	      ShowName		      off
-	      IconShape		      "round"
-	      Inputs		      "|++"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum3"
-	      Ports		      [2, 1]
-	      Position		      [295, 55, 315, 75]
-	      BlockMirror	      on
-	      BackgroundColor	      "green"
-	      DropShadow	      on
-	      ShowName		      off
-	      IconShape		      "round"
-	      Inputs		      "|+-"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum4"
-	      Ports		      [2, 1]
-	      Position		      [625, 120, 645, 140]
-	      BlockMirror	      on
-	      BackgroundColor	      "green"
-	      ShowName		      off
-	      IconShape		      "round"
-	      Inputs		      "|+-"
-	      InputSameDT	      off
-	      OutDataTypeMode	      "Inherit via internal rule"
-	      OutDataType	      "fixdt(1, 16)"
-	      OutScaling	      "2^0"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Aileron"
-	      Position		      [15, 58, 45, 72]
-	      BlockMirror	      on
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "Sum3"
-	      SrcPort		      1
-	      Points		      [-10, 0]
-	      Branch {
-		DstBlock		"Bank-angle-to-Aileron\nProportional"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, 65]
-		DstBlock		"Bank angle\nIntegrator"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Bank-angle-to-Aileron\nIntegral"
-	      SrcPort		      1
-	      Points		      [-50, 0]
-	      DstBlock		      "Sum"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Bank angle\nIntegrator"
-	      SrcPort		      1
-	      DstBlock		      "Bank-angle-to-Aileron\nIntegral"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Bank-angle-to-Aileron\nProportional"
-	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Sum4"
-	      SrcPort		      1
-	      DstBlock		      "Heading-to-Bank Angle\nProportional"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Heading-to-Bank Angle\nProportional"
-	      SrcPort		      1
-	      DstBlock		      "Saturation Bank Angle"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Heading"
-	      SrcPort		      1
-	      DstBlock		      "Sum4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Bank Angle"
-	      SrcPort		      1
-	      Points		      [0, 15]
-	      DstBlock		      "Sum3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Desired Heading"
-	      SrcPort		      1
-	      DstBlock		      "Sum4"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Sum"
-	      SrcPort		      1
-	      DstBlock		      "Aileron"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation Bank Angle"
-	      SrcPort		      1
-	      Points		      [-70, 0]
-	      DstBlock		      "Sum3"
-	      DstPort		      2
-	    }
-	    Annotation {
-	      Name		      "Bank-angle to ailerons PI control"
-	      Position		      [184, 25]
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Aileron"
-	  Position		  [25, 78, 55, 92]
-	  BlockMirror		  on
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Elevator"
-	  Position		  [25, 238, 55, 252]
-	  BlockMirror		  on
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Throttle"
-	  Position		  [25, 403, 55, 417]
-	  BlockMirror		  on
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Heading"
-	  SrcPort		  1
-	  DstBlock		  "Bank-angle-to-Aileron\nController"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Bank Angle"
-	  SrcPort		  1
-	  DstBlock		  "Bank-angle-to-Aileron\nController"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Bank-angle-to-Aileron\nController"
-	  SrcPort		  1
-	  DstBlock		  "Aileron"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Desired Heading"
-	  SrcPort		  1
-	  DstBlock		  "Bank-angle-to-Aileron\nController"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Airspeed"
-	  SrcPort		  1
-	  DstBlock		  "Airspeed-to-Elevator \nController"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Airspeed-to-Elevator \nController"
-	  SrcPort		  1
-	  DstBlock		  "Elevator"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Desired Airspeed"
-	  SrcPort		  1
-	  DstBlock		  "Airspeed-to-Elevator \nController"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Desired Altitude"
-	  SrcPort		  1
-	  DstBlock		  "Altitude-to-Throttle \nController"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Altitude-to-Throttle \nController"
-	  SrcPort		  1
-	  DstBlock		  "Throttle"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Altitude"
-	  SrcPort		  1
-	  DstBlock		  "Altitude-to-Throttle \nController"
-	  DstPort		  2
-	}
-      }
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      Ports		      [1, 3]
-      Position		      [380, 152, 385, 238]
-      BackgroundColor	      "black"
-      ShowName		      off
-      Outputs		      "3"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux1"
-      Ports		      [1, 3]
-      Position		      [440, 346, 445, 434]
-      BackgroundColor	      "black"
-      ShowName		      off
-      Outputs		      "3"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux2"
-      Ports		      [1, 16]
-      Position		      [751, 170, 1089, 175]
-      BlockRotation	      270
-      BlockMirror	      on
-      BackgroundColor	      "black"
-      NamePlacement	      "alternate"
-      ShowName		      off
-      Outputs		      "16"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Desired Altitude"
-      Ports		      [1]
-      Position		      [1100, 446, 1185, 474]
-      BackgroundColor	      "yellow"
-      DropShadow	      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Flamingo UAV"
+      Name		      "Aerosonde UAV"
       Ports		      [3, 15]
       Position		      [235, 137, 350, 433]
       BackgroundColor	      "lightBlue"
@@ -1903,7 +873,7 @@ Model {
       "'C:\\Program Files\\MATLAB\\AeroSim\\wmm.cof'|[26 05 2009]|0.8"
       MaskTabNameString	      ",,,,,,,,,,"
       System {
-	Name			"Flamingo UAV"
+	Name			"Aerosonde UAV"
 	Location		[28, 126, 1140, 920]
 	Open			off
 	ModelBrowserVisibility	off
@@ -2048,7 +1018,7 @@ Model {
 	      SourceType	      "Aerodynamic force"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2065,7 +1035,7 @@ Model {
 	      SourceType	      "Aerodynamic moment"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2084,7 +1054,7 @@ Model {
 	      SourceType	      "Drag coefficient"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2110,7 +1080,7 @@ Model {
 	      SourceType	      "Dynamic pressure"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2126,7 +1096,7 @@ Model {
 	      SourceType	      "Lift coefficient"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2159,7 +1129,7 @@ Model {
 	      SourceType	      "Pitch moment coefficient"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2183,7 +1153,7 @@ Model {
 	      SourceType	      "Roll moment coefficient"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2205,7 +1175,7 @@ Model {
 	      SourceType	      "Side force coefficient"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2238,7 +1208,7 @@ Model {
 	      SourceType	      "Wind-axes velocities"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2257,7 +1227,7 @@ Model {
 	      SourceType	      "Yaw moment coefficient"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2705,7 +1675,7 @@ Model {
 	  SourceType		  "Aircraft inertia"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -2824,7 +1794,7 @@ Model {
 	      SourceType	      "Background wind"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2840,7 +1810,7 @@ Model {
 	      SourceType	      "Standard atmosphere"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2872,7 +1842,7 @@ Model {
 	      SourceType	      "Turbulence"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -2889,7 +1859,7 @@ Model {
 	      SourceType	      "Wind shear"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3139,7 +2109,7 @@ Model {
 	      SourceType	      "ECEF Position"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3155,7 +2125,7 @@ Model {
 	      SourceType	      "EGM-96 geoid undulation model"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3179,7 +2149,7 @@ Model {
 	      SourceType	      "Ground detection"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3204,7 +2174,7 @@ Model {
 	      SourceType	      "WGS-84 Earth model"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3485,7 +2455,7 @@ Model {
 	      SourceType	      "Body-Inertial DCM"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3510,7 +2480,7 @@ Model {
 	      SourceType	      "Euler Angles"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3526,7 +2496,7 @@ Model {
 	      SourceType	      "Force equations"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3543,7 +2513,7 @@ Model {
 	      SourceType	      "Kinematic Equations"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3560,7 +2530,7 @@ Model {
 	      SourceType	      "Moment equations"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3577,7 +2547,7 @@ Model {
 	      SourceType	      "Navigation equations"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -3848,7 +2818,7 @@ Model {
 	  SourceType		  "General-aviation propulsion system"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -3920,7 +2890,7 @@ Model {
 	  SourceType		  "Total acceleration"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -3936,7 +2906,7 @@ Model {
 	  SourceType		  "Total moment"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -4607,9 +3577,970 @@ Model {
       }
     }
     Block {
+      BlockType		      Saturate
+      Name		      "Aileron \nDeflection \nLimits"
+      Position		      [2195, 720, 2225, 750]
+      UpperLimit	      "+20"
+      LowerLimit	      "-20"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Aircraft states"
+      Ports		      [1]
+      Position		      [1250, 415, 1335, 705]
+      BackgroundColor	      "cyan"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Airspeed"
+      Ports		      [1]
+      Position		      [1135, 696, 1220, 724]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Airspeed\nCmd"
+      Position		      [2300, 991, 2340, 1009]
+      Value		      "23"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Airspeed\nCommand"
+      Position		      [475, 631, 515, 649]
+      BlockMirror	      on
+      BackgroundColor	      "magenta"
+      DropShadow	      on
+      Value		      "25"
+    }
+    Block {
+      BlockType		      Derivative
+      Name		      "Airspeed Error\nDerivative"
+      Position		      [2225, 1070, 2255, 1100]
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Airspeed Error\nIntegrator"
+      Ports		      [1, 1]
+      Position		      [2225, 1000, 2255, 1030]
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Airspeed-to-Elevator\nDerivative2"
+      Position		      [2140, 1070, 2170, 1100]
+      Gain		      "-0.5"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Airspeed-to-Elevator\nIntegral2"
+      Position		      [2140, 1000, 2170, 1030]
+      Gain		      "-0.005"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Airspeed-to-Elevator\nProportional2"
+      Position		      [2140, 935, 2170, 965]
+      Gain		      "-0.03"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Altitude"
+      Ports		      [1]
+      Position		      [1135, 306, 1220, 334]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Bank Angle\nIntegrator"
+      Ports		      [1, 1]
+      Position		      [2100, 690, 2130, 720]
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Bank Angle\nIntegrator1"
+      Ports		      [1, 1]
+      Position		      [2100, 845, 2130, 875]
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Bank angle"
+      Ports		      [1]
+      Position		      [1135, 596, 1220, 624]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Aileron\nIntegral"
+      Position		      [2015, 690, 2045, 720]
+      Gain		      "0.05*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Aileron\nProportional"
+      Position		      [2015, 625, 2045, 655]
+      Gain		      "0.5*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Rudder\nIntegral"
+      Position		      [2015, 845, 2045, 875]
+      Gain		      "0.03*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Bank-Angle-to-Rudder\nProportional"
+      Position		      [2015, 780, 2045, 810]
+      Gain		      "0.3*pi/180"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Command Aileron"
+      Ports		      [1]
+      Position		      [1135, 846, 1220, 874]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Command Elevator"
+      Ports		      [1]
+      Position		      [1135, 896, 1220, 924]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Command Throttle"
+      Ports		      [1]
+      Position		      [1135, 946, 1220, 974]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Control Block"
+      Ports		      [7, 3]
+      Position		      [225, 549, 360, 691]
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Control Block"
+	Location		[2, 72, 1918, 1149]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Heading"
+	  Position		  [240, 38, 270, 52]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Bank Angle"
+	  Position		  [240, 78, 270, 92]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired Heading"
+	  Position		  [240, 118, 270, 132]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Airspeed"
+	  Position		  [240, 213, 270, 227]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired Airspeed"
+	  Position		  [240, 268, 270, 282]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired Altitude"
+	  Position		  [240, 373, 270, 387]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Altitude"
+	  Position		  [240, 428, 270, 442]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Airspeed-to-Elevator \nController"
+	  Ports			  [2, 1]
+	  Position		  [80, 192, 205, 303]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Airspeed-to-Elevator \nController"
+	    Location		    [-107, 426, 1793, 819]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Airspeed"
+	      Position		      [380, 48, 410, 62]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired Airspeed"
+	      Position		      [380, 103, 410, 117]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Derivative
+	      Name		      "Airspeed error\nDerivative"
+	      Position		      [255, 180, 285, 210]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Airspeed error\nIntegrator"
+	      Ports		      [1, 1]
+	      Position		      [255, 105, 285, 135]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Airspeed-to-Elevator\nDerivative"
+	      Position		      [170, 180, 200, 210]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "-0.5"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Airspeed-to-Elevator\nIntegral"
+	      Position		      [170, 105, 200, 135]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "-0.005"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Airspeed-to-Elevator\nProportional"
+	      Position		      [170, 40, 200, 70]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "-0.03"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [3, 1]
+	      Position		      [80, 45, 105, 95]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      Inputs		      "+++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [2, 1]
+	      Position		      [325, 45, 345, 65]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Elevator"
+	      Position		      [25, 63, 55, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed error\nDerivative"
+	      SrcPort		      1
+	      DstBlock		      "Airspeed-to-Elevator\nDerivative"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed error\nIntegrator"
+	      SrcPort		      1
+	      DstBlock		      "Airspeed-to-Elevator\nIntegral"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed-to-Elevator\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed-to-Elevator\nIntegral"
+	      SrcPort		      1
+	      Points		      [-30, 0; 0, -50]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed-to-Elevator\nDerivative"
+	      SrcPort		      1
+	      Points		      [-35, 0; 0, -110]
+	      DstBlock		      "Sum1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      Points		      [-10, 0]
+	      Branch {
+		DstBlock		"Airspeed-to-Elevator\nProportional"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 65]
+		Branch {
+		  DstBlock		  "Airspeed error\nIntegrator"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 75]
+		  DstBlock		  "Airspeed error\nDerivative"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Airspeed"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Elevator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Desired Airspeed"
+	      SrcPort		      1
+	      Points		      [-40, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "Airspeed-To-Elevator PID control"
+	      Position		      [204, 25]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Altitude-to-Throttle \nController"
+	  Ports			  [2, 1]
+	  Position		  [80, 351, 205, 464]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Altitude-to-Throttle \nController"
+	    Location		    [2, 80, 1902, 1157]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired Altitude"
+	      Position		      [575, 132, 605, 148]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Altitude"
+	      Position		      [640, 78, 670, 92]
+	      NamePlacement	      "alternate"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Altitude-to-Throttle\nIntegral"
+	      Position		      [380, 175, 410, 205]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "-0.00080"
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Altitude-to-Throttle\nIntegrator"
+	      Ports		      [1, 1]
+	      Position		      [460, 175, 490, 205]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Altitude-to-Throttle\nProportional"
+	      Position		      [395, 70, 425, 100]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "-0.045"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Integral Saturation"
+	      Position		      [280, 175, 310, 205]
+	      UpperLimit	      ".8"
+	      LowerLimit	      "0"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation Throttle"
+	      Position		      [115, 85, 145, 115]
+	      UpperLimit	      "1.5"
+	      LowerLimit	      "0"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum5"
+	      Ports		      [2, 1]
+	      Position		      [210, 72, 235, 123]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum6"
+	      Ports		      [2, 1]
+	      Position		      [580, 75, 600, 95]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Throttle"
+	      Position		      [40, 93, 70, 107]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Sum6"
+	      SrcPort		      1
+	      Points		      [-60, 0]
+	      Branch {
+		DstBlock		"Altitude-to-Throttle\nProportional"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 105]
+		DstBlock		"Altitude-to-Throttle\nIntegrator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Integral Saturation"
+	      SrcPort		      1
+	      Points		      [-10, 0; 0, -80]
+	      DstBlock		      "Sum5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Altitude-to-Throttle\nIntegral"
+	      SrcPort		      1
+	      DstBlock		      "Integral Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum5"
+	      SrcPort		      1
+	      DstBlock		      "Saturation Throttle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Altitude-to-Throttle\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Sum5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Altitude-to-Throttle\nIntegrator"
+	      SrcPort		      1
+	      DstBlock		      "Altitude-to-Throttle\nIntegral"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Altitude"
+	      SrcPort		      1
+	      DstBlock		      "Sum6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Desired Altitude"
+	      SrcPort		      1
+	      DstBlock		      "Sum6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Saturation Throttle"
+	      SrcPort		      1
+	      DstBlock		      "Throttle"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Bank-angle-to-Aileron\nController"
+	  Ports			  [3, 1]
+	  Position		  [80, 28, 205, 142]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Bank-angle-to-Aileron\nController"
+	    Location		    [474, 628, 1589, 1216]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Heading"
+	      Position		      [675, 123, 705, 137]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Bank Angle"
+	      Position		      [345, 32, 375, 48]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired Heading"
+	      Position		      [620, 177, 650, 193]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Bank angle\nIntegrator"
+	      Ports		      [1, 1]
+	      Position		      [230, 115, 260, 145]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Bank-angle-to-Aileron\nIntegral"
+	      Position		      [145, 115, 175, 145]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "0.05*pi/180"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Bank-angle-to-Aileron\nProportional"
+	      Position		      [145, 50, 175, 80]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "0.5*pi/180"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Heading-to-Bank Angle\nProportional"
+	      Position		      [505, 115, 535, 145]
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      Gain		      "-0.8"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation Bank Angle"
+	      Position		      [380, 115, 410, 145]
+	      UpperLimit	      "20"
+	      LowerLimit	      "-20"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [80, 55, 100, 75]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [295, 55, 315, 75]
+	      BackgroundColor	      "green"
+	      DropShadow	      on
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum4"
+	      Ports		      [2, 1]
+	      Position		      [625, 120, 645, 140]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Aileron"
+	      Position		      [15, 58, 45, 72]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      Points		      [-10, 0]
+	      Branch {
+		DstBlock		"Bank-angle-to-Aileron\nProportional"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"Bank angle\nIntegrator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Bank-angle-to-Aileron\nIntegral"
+	      SrcPort		      1
+	      Points		      [-50, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Bank angle\nIntegrator"
+	      SrcPort		      1
+	      DstBlock		      "Bank-angle-to-Aileron\nIntegral"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bank-angle-to-Aileron\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum4"
+	      SrcPort		      1
+	      DstBlock		      "Heading-to-Bank Angle\nProportional"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Heading-to-Bank Angle\nProportional"
+	      SrcPort		      1
+	      DstBlock		      "Saturation Bank Angle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Heading"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bank Angle"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Desired Heading"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Aileron"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation Bank Angle"
+	      SrcPort		      1
+	      Points		      [-70, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "Bank-angle to ailerons PI control"
+	      Position		      [194, 25]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Aileron"
+	  Position		  [25, 78, 55, 92]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Elevator"
+	  Position		  [25, 238, 55, 252]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Throttle"
+	  Position		  [25, 403, 55, 417]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Heading"
+	  SrcPort		  1
+	  DstBlock		  "Bank-angle-to-Aileron\nController"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bank Angle"
+	  SrcPort		  1
+	  DstBlock		  "Bank-angle-to-Aileron\nController"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bank-angle-to-Aileron\nController"
+	  SrcPort		  1
+	  DstBlock		  "Aileron"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Desired Heading"
+	  SrcPort		  1
+	  DstBlock		  "Bank-angle-to-Aileron\nController"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Airspeed"
+	  SrcPort		  1
+	  DstBlock		  "Airspeed-to-Elevator \nController"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Airspeed-to-Elevator \nController"
+	  SrcPort		  1
+	  DstBlock		  "Elevator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Desired Airspeed"
+	  SrcPort		  1
+	  DstBlock		  "Airspeed-to-Elevator \nController"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Desired Altitude"
+	  SrcPort		  1
+	  DstBlock		  "Altitude-to-Throttle \nController"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Altitude-to-Throttle \nController"
+	  SrcPort		  1
+	  DstBlock		  "Throttle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Altitude"
+	  SrcPort		  1
+	  DstBlock		  "Altitude-to-Throttle \nController"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      Ports		      [1, 3]
+      Position		      [380, 152, 385, 238]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "3"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux1"
+      Ports		      [1, 3]
+      Position		      [440, 346, 445, 434]
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "3"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux2"
+      Ports		      [1, 16]
+      Position		      [704, 185, 1111, 190]
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "black"
+      ShowName		      off
+      Outputs		      "16"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Desired Altitude"
+      Ports		      [1]
+      Position		      [1135, 446, 1220, 474]
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
       BlockType		      Constant
       Name		      "Flap"
-      Position		      [15, 71, 55, 89]
+      Position		      [15, 86, 55, 104]
       BackgroundColor	      "magenta"
       DropShadow	      on
       Value		      "0"
@@ -4618,7 +4549,7 @@ Model {
       BlockType		      Display
       Name		      "Heading"
       Ports		      [1]
-      Position		      [1100, 646, 1185, 674]
+      Position		      [1135, 646, 1220, 674]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -4627,7 +4558,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Ignition"
-      Position		      [15, 281, 55, 299]
+      Position		      [15, 266, 55, 284]
       BackgroundColor	      "magenta"
       DropShadow	      on
     }
@@ -4636,7 +4567,6 @@ Model {
       Name		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
       Ports		      [5, 1]
       Position		      [610, 185, 695, 305]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -4646,7 +4576,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
-	Location		[2, 72, 1918, 1149]
+	Location		[2, 80, 1414, 879]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4744,6 +4674,31 @@ Model {
 	  SaveFormat		  "Structure"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "FlightGear 0.9.10 \nInterface"
+	  Ports			  [12]
+	  Position		  [795, 599, 880, 841]
+	  LinkData {
+	    BlockName		    "S-Function"
+	    DialogParameters {
+	      FunctionName	      "sfunflightgear0910"
+	    }
+	  }
+	  SourceBlock		  "aerosimlib/Pilot Interface/FlightGear 0.9.8 \nInterface"
+	  SourceType		  "FlightGear 0.9.8 interface"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  hostname		  "'localhost'"
+	  port			  "5500"
+	  tsamp			  "0.04"
+	}
+	Block {
 	  BlockType		  Terminator
 	  Name			  "Fuel Mass"
 	  Position		  [445, 950, 465, 970]
@@ -4762,6 +4717,16 @@ Model {
 	  BlockType		  Terminator
 	  Name			  "Groundspeed Z-axis"
 	  Position		  [445, 565, 465, 585]
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  Ports			  [3, 1]
+	  Position		  [515, 593, 520, 697]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
 	}
 	Block {
 	  BlockType		  Mux
@@ -4804,28 +4769,13 @@ Model {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Roll rate p"
-	  Position		  [445, 600, 465, 620]
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Roll rate q"
-	  Position		  [445, 635, 465, 655]
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Yaw rate r"
-	  Position		  [445, 670, 465, 690]
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "euler to Flightgear Interface"
-	  Position		  [615, 360, 635, 380]
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "lat, long, alt to Flightgear Interface"
+	  Name			  "lat, long, altFlightgear Interface"
 	  Position		  [615, 880, 635, 900]
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "p,q,r Flightgear Interface"
+	  Position		  [615, 635, 635, 655]
 	}
 	Block {
 	  BlockType		  Outport
@@ -4851,9 +4801,9 @@ Model {
 	      DstPort		      1
 	    }
 	    Branch {
-	      Points		      [0, 240]
-	      DstBlock		      "euler to Flightgear Interface"
-	      DstPort		      1
+	      Points		      [0, 235; 640, 0]
+	      DstBlock		      "FlightGear 0.9.10 \nInterface"
+	      DstPort		      2
 	    }
 	  }
 	}
@@ -4925,6 +4875,12 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "Demux2"
+	  SrcPort		  4
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
 	  SrcPort		  8
 	  DstBlock		  "Quaternion ex"
 	  DstPort		  1
@@ -4979,40 +4935,48 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "Demux2"
+	  SrcPort		  5
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  6
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux2"
 	  SrcPort		  7
 	  DstBlock		  "Quaternion e0"
 	  DstPort		  1
 	}
 	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "p,q,r Flightgear Interface"
+	  DstPort		  1
+	}
+	Line {
 	  SrcBlock		  "Mux3"
 	  SrcPort		  1
-	  DstBlock		  "lat, long, alt to Flightgear Interface"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux2"
-	  SrcPort		  4
-	  DstBlock		  "Roll rate p"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux2"
-	  SrcPort		  5
-	  DstBlock		  "Roll rate q"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux2"
-	  SrcPort		  6
-	  DstBlock		  "Yaw rate r"
-	  DstPort		  1
+	  Points		  [60, 0]
+	  Branch {
+	    DstBlock		    "lat, long, altFlightgear Interface"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -280]
+	    DstBlock		    "FlightGear 0.9.10 \nInterface"
+	    DstPort		    1
+	  }
 	}
       }
     }
     Block {
       BlockType		      Constant
       Name		      "Mixture"
-      Position		      [15, 246, 55, 264]
+      Position		      [15, 236, 55, 254]
       BackgroundColor	      "magenta"
       DropShadow	      on
       Value		      "13"
@@ -5021,7 +4985,7 @@ Model {
       BlockType		      Mux
       Name		      "Mux"
       Ports		      [7, 1]
-      Position		      [190, 65, 195, 305]
+      Position		      [190, 82, 195, 288]
       ShowName		      off
       Inputs		      "7"
       DisplayOption	      "bar"
@@ -5040,7 +5004,7 @@ Model {
       BlockType		      Mux
       Name		      "Mux3"
       Ports		      [7, 1]
-      Position		      [770, 525, 775, 675]
+      Position		      [725, 525, 730, 675]
       ShowName		      off
       Inputs		      "7"
       DisplayOption	      "bar"
@@ -5059,7 +5023,7 @@ Model {
       BlockType		      Display
       Name		      "Pitch angle"
       Ports		      [1]
-      Position		      [1100, 546, 1185, 574]
+      Position		      [1135, 546, 1220, 574]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -5142,7 +5106,6 @@ Model {
       BlockType		      Saturate
       Name		      "Rudder \nDeflection\n Limits"
       Position		      [2195, 810, 2225, 840]
-      BlockMirror	      on
       UpperLimit	      "+15"
       LowerLimit	      "-15"
     }
@@ -5150,7 +5113,6 @@ Model {
       BlockType		      Saturate
       Name		      "Saturation2"
       Position		      [2060, 935, 2090, 965]
-      BlockMirror	      on
       UpperLimit	      "+5"
       LowerLimit	      "-5"
     }
@@ -5158,7 +5120,6 @@ Model {
       BlockType		      Saturate
       Name		      "Saturation3"
       Position		      [2060, 1000, 2090, 1030]
-      BlockMirror	      on
       UpperLimit	      "+10"
       LowerLimit	      "-10"
     }
@@ -5166,7 +5127,6 @@ Model {
       BlockType		      Saturate
       Name		      "Saturation4"
       Position		      [2060, 1070, 2090, 1100]
-      BlockMirror	      on
       UpperLimit	      "+5"
       LowerLimit	      "-5"
     }
@@ -5174,7 +5134,7 @@ Model {
       BlockType		      Display
       Name		      "Sideslip"
       Ports		      [1]
-      Position		      [1100, 746, 1185, 774]
+      Position		      [1135, 746, 1220, 774]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -5192,7 +5152,6 @@ Model {
       Name		      "Sum10"
       Ports		      [2, 1]
       Position		      [2285, 940, 2305, 960]
-      BlockMirror	      on
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|+-"
@@ -5204,7 +5163,6 @@ Model {
       Name		      "Sum11"
       Ports		      [2, 1]
       Position		      [2155, 695, 2175, 715]
-      BlockMirror	      on
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|+-"
@@ -5216,7 +5174,6 @@ Model {
       Name		      "Sum12"
       Ports		      [2, 1]
       Position		      [1950, 785, 1970, 805]
-      BlockMirror	      on
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|++"
@@ -5228,7 +5185,6 @@ Model {
       Name		      "Sum13"
       Ports		      [2, 1]
       Position		      [2155, 785, 2175, 805]
-      BlockMirror	      on
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|+-"
@@ -5240,7 +5196,6 @@ Model {
       Name		      "Sum8"
       Ports		      [2, 1]
       Position		      [1950, 630, 1970, 650]
-      BlockMirror	      on
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|++"
@@ -5252,7 +5207,6 @@ Model {
       Name		      "Sum9"
       Ports		      [3, 1]
       Position		      [1995, 940, 2020, 990]
-      BlockMirror	      on
       ShowName		      off
       Inputs		      "+++"
       OutDataType	      "sfix(16)"
@@ -5262,7 +5216,7 @@ Model {
       BlockType		      Display
       Name		      "WP East"
       Ports		      [1]
-      Position		      [1100, 351, 1185, 379]
+      Position		      [1135, 351, 1220, 379]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -5272,7 +5226,7 @@ Model {
       BlockType		      Display
       Name		      "WP North"
       Ports		      [1]
-      Position		      [1100, 396, 1185, 424]
+      Position		      [1135, 396, 1220, 424]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -5282,7 +5236,7 @@ Model {
       BlockType		      Display
       Name		      "Waypoint"
       Ports		      [1]
-      Position		      [1100, 496, 1185, 524]
+      Position		      [1135, 496, 1220, 524]
       BackgroundColor	      "yellow"
       DropShadow	      on
       Decimation	      "1"
@@ -5292,8 +5246,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Waypoint Guidance \nSubsystem"
       Ports		      [1, 8]
-      Position		      [600, 527, 705, 693]
-      BackgroundColor	      "orange"
+      Position		      [555, 527, 660, 693]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -5385,7 +5338,6 @@ Model {
 	  BlockType		  Memory
 	  Name			  "Memory"
 	  Position		  [560, 515, 590, 545]
-	  BlockMirror		  on
 	  X0			  "1"
 	}
 	Block {
@@ -5437,7 +5389,7 @@ Model {
 	  SourceType		  "RadiansToDegrees"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5456,7 +5408,7 @@ Model {
 	  SourceType		  "RadiansToDegrees"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -5753,7 +5705,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Winds"
-      Position		      [15, 321, 55, 339]
+      Position		      [15, 306, 55, 324]
       BackgroundColor	      "magenta"
       DropShadow	      on
       Value		      "[0 0 0]"
@@ -5761,18 +5713,18 @@ Model {
     Line {
       SrcBlock		      "Reset"
       SrcPort		      1
-      DstBlock		      "Flamingo UAV"
+      DstBlock		      "Aerosonde UAV"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Winds"
       SrcPort		      1
-      Points		      [155, 0; 0, -45]
-      DstBlock		      "Flamingo UAV"
+      Points		      [155, 0; 0, -30]
+      DstBlock		      "Aerosonde UAV"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Flamingo UAV"
+      SrcBlock		      "Aerosonde UAV"
       SrcPort		      1
       Points		      [160, 0]
       Branch {
@@ -5781,9 +5733,9 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[75, 0]
+	Points			[70, 0]
 	Branch {
-	  Points		  [605, 0; 0, 415]
+	  Points		  [645, 0; 0, 415]
 	  DstBlock		  "Aircraft states"
 	  DstPort		  1
 	}
@@ -5795,7 +5747,7 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Flamingo UAV"
+      SrcBlock		      "Aerosonde UAV"
       SrcPort		      6
       Points		      [15, 0]
       Branch {
@@ -5809,7 +5761,7 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Flamingo UAV"
+      SrcBlock		      "Aerosonde UAV"
       SrcPort		      3
       Points		      [10, 0]
       DstBlock		      "Demux"
@@ -5842,7 +5794,7 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Flamingo UAV"
+      SrcBlock		      "Aerosonde UAV"
       SrcPort		      15
       DstBlock		      "Stop Simulation\nwhen A/C on the ground"
       DstPort		      1
@@ -5874,37 +5826,6 @@ Model {
       DstPort		      6
     }
     Line {
-      SrcBlock		      "Control Block"
-      SrcPort		      2
-      Points		      [-35, 0]
-      Branch {
-	Labels			[1, 0]
-	Points			[-70, 0; 0, -505]
-	DstBlock		"Mux"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, 175]
-	DstBlock		"Mux4"
-	DstPort			2
-      }
-    }
-    Line {
-      SrcBlock		      "Control Block"
-      SrcPort		      1
-      Points		      [-30, 0]
-      Branch {
-	Points			[-70, 0; 0, -425]
-	DstBlock		"Mux"
-	DstPort			3
-      }
-      Branch {
-	Points			[0, 190]
-	DstBlock		"Mux4"
-	DstPort			1
-      }
-    }
-    Line {
       SrcBlock		      "Demux1"
       SrcPort		      3
       Points		      [10, 0; 0, 140]
@@ -5916,21 +5837,6 @@ Model {
       SrcPort		      1
       DstBlock		      "Control Block"
       DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Control Block"
-      SrcPort		      3
-      Points		      [-40, 0]
-      Branch {
-	Points			[-70, 0; 0, -445]
-	DstBlock		"Mux"
-	DstPort			5
-      }
-      Branch {
-	Points			[0, 160]
-	DstBlock		"Mux4"
-	DstPort			3
-      }
     }
     Line {
       Points		      [2210, 680; 0, 5; 30, 0; 0, 20]
@@ -6148,7 +6054,7 @@ Model {
     Line {
       SrcBlock		      "Mux"
       SrcPort		      1
-      DstBlock		      "Flamingo UAV"
+      DstBlock		      "Aerosonde UAV"
       DstPort		      1
     }
     Line {
@@ -6219,28 +6125,28 @@ Model {
     Line {
       SrcBlock		      "Mux1"
       SrcPort		      1
-      Points		      [5, 0; 0, 25]
+      Points		      [10, 0; 0, 25]
       DstBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Mux3"
       SrcPort		      1
-      Points		      [0, -80; -260, 0; 0, -250]
+      Points		      [0, -80; -180, 0; 0, -250]
       DstBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
       DstPort		      4
     }
     Line {
       SrcBlock		      "Mux4"
       SrcPort		      1
-      Points		      [540, 0; 0, -280; -260, 0; 0, -220]
+      Points		      [495, 0; 0, -280; -180, 0; 0, -220]
       DstBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
       DstPort		      5
     }
     Line {
       SrcBlock		      "Measurments-to-Workspace, Mux &\n Flightgear Interface Subsystem"
       SrcPort		      1
-      Points		      [0, -95; 220, 0]
+      Points		      [0, -95; 210, 0]
       DstBlock		      "Demux2"
       DstPort		      1
     }
@@ -6257,181 +6163,226 @@ Model {
       DstPort		      1
     }
     Line {
+      SrcBlock		      "Control Block"
+      SrcPort		      1
+      Points		      [-50, 0]
+      Branch {
+	Points			[0, -420]
+	DstBlock		"Mux"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 190]
+	DstBlock		"Mux4"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Control Block"
+      SrcPort		      2
+      Points		      [-55, 0]
+      Branch {
+	Points			[0, -495]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 175]
+	DstBlock		"Mux4"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Control Block"
+      SrcPort		      3
+      Points		      [-60, 0]
+      Branch {
+	Points			[0, 160]
+	DstBlock		"Mux4"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, -450]
+	DstBlock		"Mux"
+	DstPort			5
+      }
+    }
+    Line {
       SrcBlock		      "Demux2"
       SrcPort		      1
-      Points		      [0, 45]
+      Points		      [0, 30]
       DstBlock		      "AC East"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      2
-      Points		      [0, 90]
+      Points		      [0, 75]
       DstBlock		      "AC North"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      3
-      Points		      [0, 140]
+      Points		      [0, 125]
       DstBlock		      "Altitude"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      4
-      Points		      [0, 185]
+      Points		      [0, 170]
       DstBlock		      "WP East"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      5
-      Points		      [0, 230]
+      Points		      [0, 215]
       DstBlock		      "WP North"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      6
-      Points		      [0, 280]
+      Points		      [0, 265]
       DstBlock		      "Desired Altitude"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      7
-      Points		      [0, 330]
+      Points		      [0, 315]
       DstBlock		      "Waypoint"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      8
-      Points		      [0, 380]
+      Points		      [0, 365]
       DstBlock		      "Pitch angle"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      9
-      Points		      [0, 430]
+      Points		      [0, 415]
       DstBlock		      "Bank angle"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      10
-      Points		      [0, 480]
+      Points		      [0, 465]
       DstBlock		      "Heading"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      11
-      Points		      [0, 530]
+      Points		      [0, 515]
       DstBlock		      "Airspeed"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      12
-      Points		      [0, 580]
+      Points		      [0, 565]
       DstBlock		      "Sideslip"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      13
-      Points		      [0, 630]
+      Points		      [0, 615]
       DstBlock		      "AOA"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      14
-      Points		      [0, 680]
+      Points		      [0, 665]
       DstBlock		      "Command Aileron"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      15
-      Points		      [0, 730]
+      Points		      [0, 715]
       DstBlock		      "Command Elevator"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux2"
       SrcPort		      16
-      Points		      [0, 780]
+      Points		      [0, 765]
       DstBlock		      "Command Throttle"
       DstPort		      1
     }
     Annotation {
       Name		      "Groundspeed X-axis"
-      Position		      [1362, 423]
+      Position		      [1397, 423]
     }
     Annotation {
       Name		      "Groundspeed Y-axis"
-      Position		      [1362, 443]
+      Position		      [1397, 443]
     }
     Annotation {
       Name		      "Groundspeed Z-axis"
-      Position		      [1362, 463]
+      Position		      [1397, 463]
     }
     Annotation {
       Name		      "Roll rate p"
-      Position		      [1342, 483]
+      Position		      [1377, 483]
     }
     Annotation {
       Name		      "Pitch rate q"
-      Position		      [1342, 503]
+      Position		      [1377, 503]
     }
     Annotation {
       Name		      "Yaw rate r"
-      Position		      [1342, 523]
+      Position		      [1377, 523]
     }
     Annotation {
       Name		      "Quaternion e0"
-      Position		      [1352, 543]
+      Position		      [1387, 543]
     }
     Annotation {
       Name		      "Quaternion ex"
-      Position		      [1352, 563]
+      Position		      [1387, 563]
     }
     Annotation {
       Name		      "Quaternion ey"
-      Position		      [1352, 583]
+      Position		      [1387, 583]
     }
     Annotation {
       Name		      "Quaternion ez"
-      Position		      [1352, 603]
+      Position		      [1387, 603]
     }
     Annotation {
       Name		      "Latitude"
-      Position		      [1337, 623]
+      Position		      [1372, 623]
     }
     Annotation {
       Name		      "Longitude"
-      Position		      [1342, 643]
+      Position		      [1377, 643]
     }
     Annotation {
       Name		      "Altitude"
-      Position		      [1337, 663]
+      Position		      [1372, 663]
     }
     Annotation {
       Name		      "Fuel mass"
-      Position		      [1342, 683]
+      Position		      [1377, 683]
     }
     Annotation {
       Name		      "Engine speed"
-      Position		      [1352, 703]
+      Position		      [1387, 703]
     }
     Annotation {
-      Name		      "Aerosonde UAV \nAircraft control:\n longitudinal - closed-loop\n  lateral - closed-loop\nWaypoint N"
-      "avigation\n\nPFMS Project, QUAS\nNicholas Rutherford\nQUT Avionics, 2009"
-      Position		      [1129, 73]
+      Name		      "Aerosonde UAV \nAircraft control: longitudinal - closed-loop\n  lateral - closed-loop\nPFMS Project"
+      ", QUAS\nNicholas Rutherford\nQUT Avionics, 2009"
+      Position		      [1089, 63]
     }
     Annotation {
       Name		      "Bank-Angle-to-Ailerons PI Control"
