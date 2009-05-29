@@ -1,4 +1,4 @@
-% twod_pfms.m
+% pfms2d.m
 %
 % DESCRIPTION:
 % This script generates a simple 2D trajectory prediction model for a UAS
