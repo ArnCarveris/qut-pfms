@@ -1,4 +1,4 @@
-% threed_pfms.m
+% pfms3d.m
 %
 % DESCRIPTION:
 % This script generates a simple 3D trajectory prediction model for a UAS
