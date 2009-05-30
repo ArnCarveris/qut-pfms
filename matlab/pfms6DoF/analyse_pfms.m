@@ -20,12 +20,12 @@ len = size(flighttraj.signals.values);
             
 % Plot flight trajectory
 figure(1)
-plot3(flighttraj.signals.values(:,1),flighttraj.signals.values(:,2),flighttraj.signals.values(:,3),'r')
+plot3(flighttraj.signals.values(:,1),flighttraj.signals.values(:,2),flighttraj.signals.values(:,3),'b')
 hold on
-plot3(flighttraj.signals.values(:,4),flighttraj.signals.values(:,5),flighttraj.signals.values(:,6),'b')
-plot3(initloctowp(:,1),initloctowp(:,2),initloctowp(:,3))
-plot3(flighttraj.signals.values(1,1),flighttraj.signals.values(2,2),flighttraj.signals.values(3,3),'xg')
-plot3(flighttraj.signals.values(len(1),1),flighttraj.signals.values(len(1),2),flighttraj.signals.values(len(1),3),'xr')
+plot3(flighttraj.signals.values(:,4),flighttraj.signals.values(:,5),flighttraj.signals.values(:,6),'g')
+plot3(initloctowp(:,1),initloctowp(:,2),initloctowp(:,3),'g')
+plot3(flighttraj.signals.values(1,1),flighttraj.signals.values(2,2),flighttraj.signals.values(3,3),'xr')
+plot3(flighttraj.signals.values(len(1),1),flighttraj.signals.values(len(1),2),flighttraj.signals.values(len(1),3),'xk')
 axis('equal')
 title('Flight Trajectory')
 hold off
