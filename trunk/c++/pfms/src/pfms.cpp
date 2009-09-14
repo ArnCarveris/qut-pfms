@@ -7,6 +7,7 @@
 // Global Data
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 string RootDir = "";
+string settings_file = "";
 string LogOutputName;
 JSBSim::FGFDMExec* FDMExec;
 
@@ -71,6 +72,7 @@ using namespace JSBSim;
 int main(int argc, char* argv[])
 {
 	// Initialisations  	
+	settings_file = "pfms_settings";
 	double initial_seconds = 0;
 	double current_seconds = 0.0;	
 	bool result = false;
@@ -82,11 +84,23 @@ int main(int argc, char* argv[])
 	double start_time = 0;
 	// RootDir = "";
 
+	
+
 	// Set up JSBSim
 	FDMExec = new FGFDMExec();	
 	FDMExec->SetAircraftPath(RootDir + "aircraft");
 	FDMExec->SetEnginePath(RootDir + "engine");
 	FDMExec->SetSystemsPath(RootDir + "systems"); 
+
+	// Read pfms settings
+	//FGXMLFileRead *doc = new FGXMLFileRead();
+	//doc->LoadXMLDocument(settings_file);
+	//Element* document;
+	//FDMExec->document;// = FGXMLFileRead::LoadXMLDocument(settings_file);
+	//document = FGXMLFileRead::LoadXMLDocument(settings_file);
+
+	JSBSim::FGFDMExec::document; //= FGXMLFileRead::LoadXMLDocument(settings_file);
+	
 
 	// Assign debug level
 	FDMExec->SetDebugLevel(0);
@@ -184,7 +198,7 @@ pfms_init(JSBSim::FGFDMExec *FDMExec)
 	// Included FGState.h however dt did not assign for FDMExec
 
 	// Assign inital conditions
-	JSBSim::FGInitialCondition *IC = FDMExec->GetIC(); // Creates a pointer to the IC object of FDMExec	
+	FGInitialCondition *IC = FDMExec->GetIC(); // Creates a pointer to the IC object of FDMExec	
 
 	IC->SetLatitudeDegIC(29.593978); // Initial Latitude
 	IC->SetLongitudeDegIC(-95.163839); // Initial Longitude

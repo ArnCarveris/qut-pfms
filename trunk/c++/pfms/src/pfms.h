@@ -2,6 +2,9 @@
 #include <FGFDMExec.h>
 #include <models/FGPropulsion.h>
 #include <FGState.h>
+#include <input_output/FGXMLParse.h>
+#include <input_output/FGXMLFileRead.h>
+//#include <input_output/FGXMLFileRead.h>
 
 using namespace std;
 
