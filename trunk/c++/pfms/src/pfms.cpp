@@ -98,8 +98,7 @@ int main(int argc, char* argv[])
 	//Element* document;
 	//FDMExec->document;// = FGXMLFileRead::LoadXMLDocument(settings_file);
 	//document = FGXMLFileRead::LoadXMLDocument(settings_file);
-
-	JSBSim::FGFDMExec::document; //= FGXMLFileRead::LoadXMLDocument(settings_file);
+	//JSBSim::FGFDMExec::document; //= FGXMLFileRead::LoadXMLDocument(settings_file);
 	
 
 	// Assign debug level
