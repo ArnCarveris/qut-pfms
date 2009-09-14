@@ -24,7 +24,7 @@ plot3(flighttraj.signals.values(:,1),flighttraj.signals.values(:,2),flighttraj.s
 hold on
 plot3(flighttraj.signals.values(:,4),flighttraj.signals.values(:,5),flighttraj.signals.values(:,6),'g')
 plot3(initloctowp(:,1),initloctowp(:,2),initloctowp(:,3),'g')
-plot3(flighttraj.signals.values(1,1),flighttraj.signals.values(2,2),flighttraj.signals.values(3,3),'xr')
+plot3(flighttraj.signals.values(1,1),flighttraj.signals.values(1,2),flighttraj.signals.values(1,3),'xr')
 plot3(flighttraj.signals.values(len(1),1),flighttraj.signals.values(len(1),2),flighttraj.signals.values(len(1),3),'xk')
 axis('equal')
 title('Flight Trajectory')
