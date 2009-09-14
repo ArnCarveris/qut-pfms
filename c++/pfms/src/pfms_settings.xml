@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<pfms_settings name="default">
+  <!--
+    This file assigns the pfms settings
+  -->
+  <start value="0.0">
+  <prediction_horizon value="10">
+  <dt value="0.02">
+  <aircraft value="c310">
+  <output_file value="../pfms/logfiles/output_file.csv"/>
+ </pfms_settings>
