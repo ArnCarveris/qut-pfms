@@ -23,8 +23,7 @@ using namespace std;
 #endif
 
 // Function Definitions
-void publish_config(JSBSim::FGFDMExec *FDMExec);
-
 bool pfms_init(JSBSim::FGFDMExec *FDMExec);
-
+void pfms_publish_config(JSBSim::FGFDMExec *FDMExec);
 void pfms_event(JSBSim::FGFDMExec *FDMExec);
+void pfms_readJSBSimMessages(JSBSim::FGFDMExec* FDMExec);
